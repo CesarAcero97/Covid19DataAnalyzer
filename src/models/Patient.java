@@ -1,6 +1,7 @@
 package models;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Patient {
 	private int ID;
@@ -18,12 +19,12 @@ public class Patient {
 	private LocalDate recoveryDate;
 	private String recoveryType;
 	
-	public Patient(int iD, LocalDate admissionDate, String city, String department, String attention, byte age, 
-			char sex, String type, String status, String countryOfOrigin, LocalDate firstSymptomsDate,
-			LocalDate diagnosticDate, LocalDate recoveryDate, String recoveryType) {
-		super();
+	public Patient(int iD, String admissionDate, String city, String department, String attention, byte age, 
+			char sex, String type, String status, String countryOfOrigin, String firstSymptomsDate,
+			String diagnosticDate, String recoveryDate, String recoveryType) {
+		DateTimeFormatter dtf = DateTimeFormatter.ISO_INSTANT;
 		ID = iD;
-		this.admissionDate = admissionDate;
+		this.admissionDate = LocalDate.parse(admissionDate, dtf);
 		this.city = city;
 		this.department = department;
 		this.attention = attention;
@@ -32,9 +33,9 @@ public class Patient {
 		this.type = type;
 		this.status = status;
 		this.countryOfOrigin = countryOfOrigin;
-		this.firstSymptomsDate = firstSymptomsDate;
-		this.diagnosticDate = diagnosticDate;
-		this.recoveryDate = recoveryDate;
+		this.firstSymptomsDate = LocalDate.parse(firstSymptomsDate, dtf);
+		this.diagnosticDate = LocalDate.parse(diagnosticDate, dtf);
+		this.recoveryDate = LocalDate.parse(recoveryDate, dtf);
 		this.recoveryType = recoveryType;
 	}
 
