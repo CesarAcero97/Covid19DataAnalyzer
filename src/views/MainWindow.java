@@ -5,8 +5,13 @@ import views.reports.AccountType;
 import views.reports.BillingAverage;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainWindow extends JFrame {
 
@@ -61,5 +66,38 @@ public class MainWindow extends JFrame {
 
     public void showBillingAverageRep(double[] values){
         billingAverage.setValues(values);
+    }
+
+    //Font Init
+
+    private void fontsInit(){
+        try{
+            InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_BLOCKBE_CONDENSED));
+            Font blockbaseFont = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
+            bigBlockBeCondensed = blockbaseFont.deriveFont(Font.PLAIN, 90);
+            normalBlockBeCondensed = blockbaseFont.deriveFont(Font.PLAIN, 70);
+            smallBlockBeCondensed = blockbaseFont.deriveFont(Font.PLAIN, 55);
+        }catch(IOException | FontFormatException e){
+            System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
+        }
+
+        try{
+            InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_LATO_REGULAR));
+            Font latoBaseFont = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
+            smallLatoFont = latoBaseFont.deriveFont(Font.PLAIN, 12);
+            normalSmallLatoFont = latoBaseFont.deriveFont(Font.PLAIN, 14);
+            normalLatoFont = latoBaseFont.deriveFont(Font.PLAIN, 16);
+            bigLatoFont = latoBaseFont.deriveFont(Font.PLAIN, 25);
+        }catch(IOException | FontFormatException e){
+            System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
+        }
+
+        try{
+            InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_AWESEOME_BRAND));
+            Font awesomeFont = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
+            awesomeBrand = awesomeFont.deriveFont(Font.PLAIN, 15);
+        }catch(IOException | FontFormatException e){
+            System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
+        }
     }
 }
