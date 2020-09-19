@@ -12,7 +12,7 @@ public class TableBorder implements Border {
     }
 
     public Insets getBorderInsets(Component c) {
-        return new Insets(this.radio+100, this.radio+1, this.radio+2, this.radio);
+        return new Insets(this.radio+1, this.radio+1, this.radio+2, this.radio);
     }
 
     public boolean isBorderOpaque() {
@@ -20,7 +20,7 @@ public class TableBorder implements Border {
     }
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-        g.drawRoundRect(x+radio, y+radio, width-(radio*2), height-(radio*2), radio, radio);
+        g.drawRoundRect(x+radio, y+radio, width-(radio*2-1), height-(radio*2-1), radio, radio);
     }
 
 }

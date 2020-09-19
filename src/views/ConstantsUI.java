@@ -1,11 +1,27 @@
 package views;
 
 import java.awt.*;
+import java.time.LocalDate;
 
 public class ConstantsUI {
     public static final String WINDOW_TITLE = "Electric Power App";
-    public static final String[] HEADERS_TABLE = {"N° Usuario", "Estrato", "Habitantes", "Tipo", "Ultima Lectura",
-            "Lectura Actual", "Consumo", "Valor Bruto", "Subsidio", "Impuesto", "Recarga", "Valor Neto"};
+    public static final String[] HEADERS_TABLE = {"ID", "Fecha de Admision", "Ciudad", "Atencion", "Edad",
+            "Sexo", "Tipo", "Estado", "Pais de Origen", "FIS", "Fecha Diagnostico", "Fecha Recuperacion", "Recuperacion"};
+    private int ID;
+    private LocalDate admissionDate;
+    private String city;
+    private String department;
+    private String attention;
+    private byte age;
+    private String sex;
+    private String type;
+    private String status;
+    private String countryOfOrigin;
+    private LocalDate firstSymptomsDate;
+    private LocalDate diagnosticDate;
+    private LocalDate recoveryDate;
+    private String recoveryType;
+
     public static final String EXIT = "Salir";
     public static final String IMPORT = "Importar";
     public static final String EXPORT = "Exportar";
@@ -33,13 +49,14 @@ public class ConstantsUI {
     public static Color TEXT_COLOR = Color.decode("#F8F8FF");
     public static Color TABLE_BG_COLOR = Color.decode("#696969");
     public static Color TABLE_FG_COLOR = Color.decode("#ffffff");
+    public static Color BUTTON_BG_COLOR = Color.decode("#ffffff");
+    public static Color BUTTON_FG_COLOR = Color.decode("#5B6A76");
+
 
     //Icons PATH
-    /*
-    public static String PATH_EXIT_ICON = "/imgs/exit.png";
-    public static String PATH_EXPORT_ICON = "/imgs/export.png";
-    public static String PATH_IMPORT_ICON = "/imgs/import.png";
-    public static String PATH_REFRESH_ICON = "/imgs/refresh.png";
+    public static String PATH_EXIT_ICON = "/resources/imgs/exit.png";
+    public static String PATH_EXPORT_ICON = "/resources/imgs/export.png";
+    public static String PATH_IMPORT_ICON = "/resources/imgs/import.png";
+    public static String PATH_REFRESH_ICON = "/resources/imgs/refresh.png";
 
-     */
 }
