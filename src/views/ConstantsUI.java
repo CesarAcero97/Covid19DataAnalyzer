@@ -27,8 +27,11 @@ public class ConstantsUI {
     public static Color TEXT_COLOR = Color.decode("#F8F8FF");
 
     //Icons PATH
+    /*
     public static String PATH_EXIT_ICON = "/imgs/exit.png";
     public static String PATH_EXPORT_ICON = "/imgs/export.png";
     public static String PATH_IMPORT_ICON = "/imgs/import.png";
     public static String PATH_REFRESH_ICON = "/imgs/refresh.png";
+
+     */
 }

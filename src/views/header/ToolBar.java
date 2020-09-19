@@ -19,8 +19,8 @@ public class ToolBar extends JToolBar {
 
     private void componentsInit(ActionListener listener){
         exitButton = new JButton();
-        Image addIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_EXIT_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
-        exitButton.setIcon(new ImageIcon(addIcon));
+        //Image addIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_EXIT_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+        //exitButton.setIcon(new ImageIcon(addIcon));
         //exitButton.setActionCommand( Commands.EXIT_APP.name() );
         exitButton.addActionListener( listener );
         exitButton.setToolTipText( ConstantsUI.EXIT );
@@ -28,8 +28,8 @@ public class ToolBar extends JToolBar {
         add(exitButton);
 
         importButton = new JButton();
-        Image importIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_IMPORT_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
-        importButton.setIcon(new ImageIcon(importIcon));
+        //Image importIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_IMPORT_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+        //importButton.setIcon(new ImageIcon(importIcon));
         //importButton.setActionCommand( Commands.IMPORT_FILE.name() );
         importButton.addActionListener( listener );
         importButton.setToolTipText( ConstantsUI.IMPORT );
@@ -37,8 +37,8 @@ public class ToolBar extends JToolBar {
         add(importButton);
 
         exportButton = new JButton();
-        Image exportIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_EXPORT_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
-        exportButton.setIcon(new ImageIcon(exportIcon));
+        //Image exportIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_EXPORT_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+        //exportButton.setIcon(new ImageIcon(exportIcon));
         //exportButton.setActionCommand( Commands.EXPORT_FILE.name() );
         exportButton.addActionListener( listener );
         exportButton.setToolTipText( ConstantsUI.EXPORT );
@@ -46,8 +46,8 @@ public class ToolBar extends JToolBar {
         add(exportButton);
 
         refreshButton = new JButton();
-        Image refreshIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_REFRESH_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
-        refreshButton.setIcon(new ImageIcon(refreshIcon));
+        //Image refreshIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_REFRESH_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+        //refreshButton.setIcon(new ImageIcon(refreshIcon));
         //refreshButton.setActionCommand( Commands.REFRESH.name() );
         refreshButton.addActionListener( listener );
         refreshButton.setToolTipText( ConstantsUI.REFRESH );
