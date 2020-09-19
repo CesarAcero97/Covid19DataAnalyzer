@@ -51,6 +51,7 @@ public class ConstantsUI {
     public static Color TABLE_FG_COLOR = Color.decode("#ffffff");
     public static Color BUTTON_BG_COLOR = Color.decode("#ffffff");
     public static Color BUTTON_FG_COLOR = Color.decode("#5B6A76");
+    public static Color RED_COLOR = Color.decode("#ff0000");
 
 
     //Icons PATH

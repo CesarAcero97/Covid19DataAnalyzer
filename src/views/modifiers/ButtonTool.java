@@ -7,13 +7,15 @@ import java.awt.*;
 
 public class ButtonTool extends JButton {
 
-    private Color hoverBackgroundColor = ConstantsUI.BUTTON_BG_COLOR;
-    private Color pressedBackgroundColor = ConstantsUI.BUTTON_BG_COLOR;
+    private Color hoverBackgroundColor;
+    private Color pressedBackgroundColor;
 
     public ButtonTool(){
         super();
         setBackground(ConstantsUI.BUTTON_BG_COLOR);
         setForeground(ConstantsUI.BUTTON_FG_COLOR);
+        hoverBackgroundColor =  ConstantsUI.RED_COLOR;
+        pressedBackgroundColor =  ConstantsUI.RED_COLOR;
     }
 
     public ButtonTool(String text){
@@ -36,21 +38,5 @@ public class ButtonTool extends JButton {
 
     @Override
     public void setContentAreaFilled(boolean b) {
-    }
-
-    public Color getHoverBackgroundColor() {
-        return hoverBackgroundColor;
-    }
-
-    public void setHoverBackgroundColor(Color hoverBackgroundColor) {
-        this.hoverBackgroundColor = hoverBackgroundColor;
-    }
-
-    public Color getPressedBackgroundColor() {
-        return pressedBackgroundColor;
-    }
-
-    public void setPressedBackgroundColor(Color pressedBackgroundColor) {
-        this.pressedBackgroundColor = pressedBackgroundColor;
     }
 }
