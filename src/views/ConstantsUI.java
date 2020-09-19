@@ -21,6 +21,12 @@ public class ConstantsUI {
     public static final String STRATUM_THREE = "Estrato 3";
     public static final String STRATUM_FOUR = "Estrato 4";
     public static final String STRATUM_FIVE = "Estrato 5";
+    public static final String PATH_USER = System.getProperty("user.dir");
+    public static final String PATH_ROBOTO_BLACK = PATH_USER + "/src/resources/fonts/Roboto-Black.ttf";
+    public static final String PATH_ROBOTO_REGULAR = PATH_USER + "/src/resources/fonts/Roboto-Regular.ttf";
+    public static final String PATH_ROBOTO_LIGHT = PATH_USER + "/src/resources/fonts/Roboto-Light.ttf";
+    public static final String PATH_AWESEOME_BRAND = PATH_USER + "/src/resources/fonts/fa-brands-400.ttf";
+    public static final String EXCEPTION_MSG_FONT_ERROR = "No se puede cargar la fuente";
 
     //Colors
     public static Color MAIN_COLOR = Color.decode("#2d2d2d");

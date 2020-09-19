@@ -20,6 +20,14 @@ public class MainWindow extends JFrame {
 	private AccountType accountType;
 	private BillingAverage billingAverage;
 
+	public Font robotoBigBlack;
+	public Font robotoMediumBlack;
+	public Font robotoBigRegular;
+	public Font robotoMediumRegular;
+	public Font robotoSmallRegular;
+	public Font robotoMediumLigth;
+	public Font awesomeMediumBrand;
+
     public MainWindow(ActionListener listener) {
         this.setDefaultCloseOperation( EXIT_ON_CLOSE );
         this.setLocationRelativeTo( null );
@@ -27,6 +35,7 @@ public class MainWindow extends JFrame {
         this.setSize(1200, 600);
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setVisible(true);
+        this.fontsInit();
         componentsInit(listener);
     }
     //Constructor de prueba NO DEJAR PARA LA VERSION FINAL
@@ -37,6 +46,7 @@ public class MainWindow extends JFrame {
         this.setSize(1200, 600);
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setVisible(true);
+        this.fontsInit();
         componentsInit(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -72,22 +82,28 @@ public class MainWindow extends JFrame {
 
     private void fontsInit(){
         try{
-            InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_BLOCKBE_CONDENSED));
-            Font blockbaseFont = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
-            bigBlockBeCondensed = blockbaseFont.deriveFont(Font.PLAIN, 90);
-            normalBlockBeCondensed = blockbaseFont.deriveFont(Font.PLAIN, 70);
-            smallBlockBeCondensed = blockbaseFont.deriveFont(Font.PLAIN, 55);
+            InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_ROBOTO_BLACK));
+            Font robotoBlackBase = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
+            robotoBigBlack = robotoBlackBase.deriveFont(Font.PLAIN, 90);
+            robotoMediumBlack = robotoBlackBase.deriveFont(Font.PLAIN, 70);
         }catch(IOException | FontFormatException e){
             System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
         }
 
         try{
-            InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_LATO_REGULAR));
-            Font latoBaseFont = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
-            smallLatoFont = latoBaseFont.deriveFont(Font.PLAIN, 12);
-            normalSmallLatoFont = latoBaseFont.deriveFont(Font.PLAIN, 14);
-            normalLatoFont = latoBaseFont.deriveFont(Font.PLAIN, 16);
-            bigLatoFont = latoBaseFont.deriveFont(Font.PLAIN, 25);
+            InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_ROBOTO_REGULAR));
+            Font robotoRegularBase = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
+            robotoBigRegular = robotoRegularBase.deriveFont(Font.PLAIN, 12);
+            robotoMediumRegular = robotoRegularBase.deriveFont(Font.PLAIN, 14);
+            robotoSmallRegular = robotoRegularBase.deriveFont(Font.PLAIN, 16);
+        }catch(IOException | FontFormatException e){
+            System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
+        }
+
+        try{
+            InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_ROBOTO_LIGHT));
+            Font robotoLigthBase = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
+            robotoMediumLigth = robotoLigthBase.deriveFont(Font.PLAIN, 12);
         }catch(IOException | FontFormatException e){
             System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
         }
@@ -95,7 +111,7 @@ public class MainWindow extends JFrame {
         try{
             InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_AWESEOME_BRAND));
             Font awesomeFont = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
-            awesomeBrand = awesomeFont.deriveFont(Font.PLAIN, 15);
+            awesomeMediumBrand = awesomeFont.deriveFont(Font.PLAIN, 15);
         }catch(IOException | FontFormatException e){
             System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
         }
