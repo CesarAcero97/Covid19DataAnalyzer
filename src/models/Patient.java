@@ -17,7 +17,6 @@ public class Patient {
 	private LocalDate diagnosticDate;
 	private LocalDate recoveryDate;
 	private String recoveryType;
-
 	
 	public Patient(int iD, LocalDate admissionDate, String city, String department, String attention, byte age, 
 			char sex, String type, String status, String countryOfOrigin, LocalDate firstSymptomsDate,
