@@ -1,6 +1,7 @@
 package persistence;
 import com.google.gson.Gson;
 import models.Patient;
+import models.PatientFull;
 import org.json.simple.*;
 
 import java.io.*;
@@ -22,18 +23,31 @@ public class JsonFileManager {
         return sb.toString();
     }
 
-    public static String readFileFromUrl(String url) throws IOException {
-            InputStream is = new URL(url).openStream();
-            try {
-                BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+    public static String readFileFromUrl(String url) {
+        InputStream is = null;
+        try {
+            is = new URL(url).openStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
                 return readAll(rd);
-            } finally {
+            } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
                 is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+        }
+        return "";
     }
 
-    public Patient[] readJson(String jsonText){
-        return new Gson().fromJson(jsonText, Patient[].class);
+    public PatientFull[] readJson(String url){
+        String text = readFileFromUrl(url);
+        return new Gson().fromJson(text, PatientFull[].class);
     }
 
     /*
