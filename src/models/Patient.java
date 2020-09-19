@@ -10,7 +10,7 @@ public class Patient {
 	private String department;
 	private String attention;
 	private byte age;
-	private char sex;
+	private String sex;
 	private String type;
 	private String status;
 	private String countryOfOrigin;
@@ -19,8 +19,8 @@ public class Patient {
 	private LocalDate recoveryDate;
 	private String recoveryType;
 	
-	public Patient(int iD, String admissionDate, String city, String department, String attention, byte age, 
-			char sex, String type, String status, String countryOfOrigin, String firstSymptomsDate,
+	public Patient(int iD, String admissionDate, String city, String department, String attention, String age, 
+			String sex, String type, String status, String countryOfOrigin, String firstSymptomsDate,
 			String diagnosticDate, String recoveryDate, String recoveryType) {
 		DateTimeFormatter dtf = DateTimeFormatter.ISO_INSTANT;
 		ID = iD;
@@ -28,7 +28,7 @@ public class Patient {
 		this.city = city;
 		this.department = department;
 		this.attention = attention;
-		this.age = age;
+		this.age = Byte.parseByte(age);
 		this.sex = sex;
 		this.type = type;
 		this.status = status;
@@ -63,7 +63,7 @@ public class Patient {
 		return age;
 	}
 
-	public char getSex() {
+	public String getSex() {
 		return sex;
 	}
 

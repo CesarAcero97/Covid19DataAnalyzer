@@ -46,8 +46,7 @@ public class JsonFileManager {
         return patientList;
     }
     
-    
-    public void writeFile(String path, ArrayList<Employee> employeeList) {
+/*    public void writeFile(String path, ArrayList<Employee> employeeList) {
 		try {
 			File file=new File(path);  
 			file.createNewFile();  
@@ -78,6 +77,6 @@ public class JsonFileManager {
 		} catch (Exception e) {
 
 		}
-	}
+	}*/
 
 }
