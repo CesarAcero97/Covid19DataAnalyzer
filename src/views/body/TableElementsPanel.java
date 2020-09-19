@@ -1,6 +1,7 @@
 package views.body;
 
 import views.ConstantsUI;
+import views.modifiers.TableBorder;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -17,7 +18,7 @@ public class TableElementsPanel extends JPanel{
         return dtmElements;
     }
 
-    private JTable jtElements;
+    private JTable table;
     private JScrollPane jsTable;
     private ArrayList<Font> fontList;
 
@@ -31,25 +32,25 @@ public class TableElementsPanel extends JPanel{
         dtmElements = new DefaultTableModel();
         dtmElements.setColumnIdentifiers( ConstantsUI.HEADERS_TABLE );
 
-        jtElements = new JTable();
-        jtElements.setModel(dtmElements);
-        jtElements.getTableHeader().setReorderingAllowed(false);
-        jtElements.getTableHeader().setBackground( ConstantsUI.MAIN_COLOR );
-        jtElements.getTableHeader().setPreferredSize( new Dimension(0, 60));
-        jtElements.getTableHeader().setForeground(Color.white);
-        jtElements.setBackground(Color.white);
-        jtElements.setFillsViewportHeight(true);
-        jtElements.setRowHeight( 35 );
-        jtElements.setBorder(null);
+        table = new JTable();
+        table.setModel(dtmElements);
+        table.getTableHeader().setReorderingAllowed(false);
+        table.getTableHeader().setBackground( ConstantsUI.MAIN_COLOR );
+        table.getTableHeader().setPreferredSize( new Dimension(0, 60));
+        table.getTableHeader().setForeground(Color.white);
+        table.setBackground(Color.white);
+        table.setFillsViewportHeight(true);
+        table.setRowHeight( 35 );
+        table.setBorder(null);
 
         centerTextInCell();
 
-        jsTable = new JScrollPane(jtElements);
+        jsTable = new JScrollPane(table);
         jsTable.setForeground(Color.white);
         jsTable.setBorder(null);
         jsTable.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.add(jsTable, BorderLayout.PAGE_END);
-        this.setBorder(null);
+        this.setBorder(new TableBorder(8));
 
     }
     public void refreshTable(Object[][] list){
@@ -70,7 +71,7 @@ public class TableElementsPanel extends JPanel{
         DefaultTableCellRenderer centerModel = new DefaultTableCellRenderer();
         centerModel.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < dtmElements.getColumnCount(); i++) {
-            jtElements.getColumnModel().getColumn(i).setCellRenderer(centerModel);
+            table.getColumnModel().getColumn(i).setCellRenderer(centerModel);
         }
     }
 

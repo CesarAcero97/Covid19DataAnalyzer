@@ -1,6 +1,7 @@
 package views.body;
 
 import views.header.HeaderPanel;
+import views.modifiers.TableBorder;
 
 import javax.swing.*;
 import java.awt.*;

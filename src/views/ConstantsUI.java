@@ -31,6 +31,8 @@ public class ConstantsUI {
     //Colors
     public static Color MAIN_COLOR = Color.decode("#2d2d2d");
     public static Color TEXT_COLOR = Color.decode("#F8F8FF");
+    public static Color TABLE_BG_COLOR = Color.decode("#696969");
+    public static Color TABLE_FG_COLOR = Color.decode("#ffffff");
 
     //Icons PATH
     /*
