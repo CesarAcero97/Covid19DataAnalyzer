@@ -5,20 +5,21 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
-import org.json.simple.DeserializationException;
-import org.json.simple.JsonArray;
-import org.json.simple.JsonObject;
-import org.json.simple.Jsoner;
+import org.json.simple.*;
 
 import models.Patient;
+import org.json.simple.parser.JSONParser;
 
 public class JsonFileManager {
     public ArrayList<Patient> readFile(String fileName) throws FileNotFoundException, IOException, DeserializationException{
         ArrayList<Patient> patientList = new ArrayList<>();
         JsonObject jsonObject = (JsonObject) Jsoner.deserialize(new FileReader(fileName));
-        JsonArray listOfEmployees = (JsonArray) jsonObject.get("Patients");
+        JsonArray listOfEmployees = (JsonArray) jsonObject.get("data");
         for (Object object : listOfEmployees) {
             JsonObject personObj = (JsonObject) object;
             int ID = personObj.getInteger("id_de_caso");
@@ -45,7 +46,6 @@ public class JsonFileManager {
         }
         return patientList;
     }
-    
 /*    public void writeFile(String path, ArrayList<Employee> employeeList) {
 		try {
 			File file=new File(path);  
@@ -58,7 +58,7 @@ public class JsonFileManager {
 				jsonObjPerson.put("Nombre", employee.getName());
 				jsonObjPerson.put("Apellido", employee.getLastName());
 				jsonObjPerson.put("Categoria", employee.getCategory());
-				jsonObjPerson.put("Tipo Vinculación", employee.getType());
+				jsonObjPerson.put("Tipo Vinculaciï¿½n", employee.getType());
 				jsonObjPerson.put("Tipo Documento", employee.getDocumentType());
 				jsonObjPerson.put("Puntos salariales", employee.getSalaryPoints());
 				jsonObjPerson.put("Numero Documento", employee.getDocumentNumber());
