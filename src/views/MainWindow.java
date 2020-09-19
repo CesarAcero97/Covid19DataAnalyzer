@@ -5,6 +5,7 @@ import views.reports.AccountType;
 import views.reports.BillingAverage;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainWindow extends JFrame {
@@ -22,6 +23,21 @@ public class MainWindow extends JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setVisible(true);
         componentsInit(listener);
+    }
+    //Constructor de prueba NO DEJAR PARA LA VERSION FINAL
+    public MainWindow() {
+        this.setDefaultCloseOperation( EXIT_ON_CLOSE );
+        this.setLocationRelativeTo( null );
+        this.setTitle(ConstantsUI.WINDOW_TITLE);
+        this.setSize(1200, 600);
+        this.setExtendedState(MAXIMIZED_BOTH);
+        this.setVisible(true);
+        componentsInit(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     private void componentsInit(ActionListener listener) {
