@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class ConstantsUI {
     public static final String WINDOW_TITLE = "COVID-19 ANALYZER";
-    public static final String[] HEADERS_TABLE = {"ID", "Fecha de Admision", "Ciudad", "Atencion", "Edad",
+    public static final String[] HEADERS_TABLE = {"ID", "Fecha de Admision", "Ciudad", "Departamento", "Atencion", "Edad",
             "Sexo", "Tipo", "Estado", "Pais de Origen", "FIS", "Fecha Diagnostico", "Fecha Recuperacion", "Recuperacion"};
     private int ID;
     private LocalDate admissionDate;

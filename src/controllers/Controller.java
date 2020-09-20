@@ -55,7 +55,9 @@ public class Controller implements ActionListener {
 	private void webData(){
 		JsonFileManager reader = new JsonFileManager();
 		PatientFull[] list = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?pertenencia_etnica=Otro");
+		PatientFull[] secondList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Boyac%C3%A1");
 		manager.addList(list);
+		manager.addList(secondList);
 	}
 
 	private void refresh(){
