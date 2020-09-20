@@ -60,7 +60,7 @@ public class ToolBar extends JToolBar {
         importButton = new ButtonTool();
         Image importIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_IMPORT_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         importButton.setIcon(new ImageIcon(importIcon));
-        //importButton.setActionCommand( Commands.IMPORT_FILE.name() );
+        importButton.setActionCommand( Commands.IMPORT.name() );
         importButton.addActionListener( listener );
         importButton.setToolTipText( ConstantsUI.IMPORT );
         importButton.setBorderPainted(false);
@@ -69,7 +69,7 @@ public class ToolBar extends JToolBar {
         exportButton = new ButtonTool();
         Image exportIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_EXPORT_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         exportButton.setIcon(new ImageIcon(exportIcon));
-        //exportButton.setActionCommand( Commands.EXPORT_FILE.name() );
+        exportButton.setActionCommand( Commands.EXPORT.name() );
         exportButton.addActionListener( listener );
         exportButton.setToolTipText( ConstantsUI.EXPORT );
         exportButton.setBorderPainted(false);

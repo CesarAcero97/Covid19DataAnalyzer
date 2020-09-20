@@ -21,6 +21,7 @@ public class Controller implements ActionListener {
 	
 	private MainWindow mainWindow;
 	private PatientManager manager;
+	private JsonFileManager jsonFileManager;
 
 	private static final String ENGLISH_PATH = "resources/languages/languageUS.properties";
 	private static final String SPANISH_PATH = "resources/languages/languageES.properties";
@@ -53,6 +54,12 @@ public class Controller implements ActionListener {
 				break;
 			case REFRESH:
 				this.refresh();
+				break;
+			case IMPORT:
+				this.importFile();
+				break;
+			case EXPORT:
+				this.exportFile();
 				break;
 			case REMOVE_PATIENT:
 				this.removePatient();
@@ -100,6 +107,16 @@ public class Controller implements ActionListener {
 	}
 
 	//Reports
+
+	private void importFile(){
+		String path = mainWindow.getFilePath();
+		manager.addList(jsonFileManager.readJsonLocal(path));
+	}
+
+	private void exportFile(){
+		String path = mainWindow.getSavePath();
+		jsonFileManager.writeJsonFile(manager.getPatientList(), path);
+	}
 
 	private void reportGenerator(int reportId){
 		PieReport report;
@@ -164,7 +181,6 @@ public class Controller implements ActionListener {
 
 	private void removePatient(){
 		int id = mainWindow.getSelectedId();
-		System.out.println(id);
 		manager.delete(id);
 		refresh();
 	}
@@ -174,14 +190,14 @@ public class Controller implements ActionListener {
 	}
 
 	private void webData(){
-		JsonFileManager reader = new JsonFileManager();
-		PatientFull[] basicList = reader.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json");
+		jsonFileManager = new JsonFileManager();
+		PatientFull[] basicList = jsonFileManager.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json");
 		manager.addList(basicList);
-		PatientFull[] boyacaList = reader.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Boyac%C3%A1");
+		PatientFull[] boyacaList = jsonFileManager.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Boyac%C3%A1");
 		manager.addList(boyacaList);
-		PatientFull[] antioquiaList = reader.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Antioquia");
+		PatientFull[] antioquiaList = jsonFileManager.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Antioquia");
 		manager.addList(antioquiaList);
-		PatientFull[] huilaList = reader.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Huila");
+		PatientFull[] huilaList = jsonFileManager.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Huila");
 		manager.addList(huilaList);
 		this.refresh();
 	}

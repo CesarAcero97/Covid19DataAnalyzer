@@ -7,16 +7,14 @@ import views.body.MainPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private MainPanel mainPanel;
 	private AddPatientPanel addPatientPanel;
+	private JFileChooser fileChooser;
 
 	private Font[] fonts;
 
@@ -66,6 +64,28 @@ public class MainWindow extends JFrame {
         return addPatientPanel.getPatient();
     }
 
+    public String getFilePath(){
+        fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showOpenDialog(this);
+
+        if(seleccion == JFileChooser.APPROVE_OPTION){
+            File fichero = fileChooser.getSelectedFile();
+            return fichero.getAbsolutePath();
+        }else{
+            return "";
+        }
+    }
+
+    public String getSavePath(){
+        fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showSaveDialog(this);
+        if(seleccion == JFileChooser.APPROVE_OPTION){
+            File fichero = fileChooser.getSelectedFile();
+            return fichero.getAbsolutePath();
+        }else{
+            return "";
+        }
+    }
     //Font Init
 
     private void fontsInit(){
