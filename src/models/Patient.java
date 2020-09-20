@@ -91,7 +91,7 @@ public class Patient {
 	}
 
 	public String getRecoveryType() {
-		return recoveryType;
+		return this.recoveryType;
 	}
 	
 	public void setID(int iD) {
