@@ -17,8 +17,7 @@ public class PatientManager {
 	}
 	
 	public void addList(Patient[] list){
-		List<Patient> patientList = Arrays.asList(list);
-		patientList.addAll(patientList);
+		patientList.addAll(new ArrayList<>(Arrays.asList(list)));
 	}
 
 	public void addList(PatientFull[] list){
