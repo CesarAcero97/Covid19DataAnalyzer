@@ -204,6 +204,7 @@ public class PatientManager {
 		int range19 = 0;
 		int range20 = 0;
 		int range21 = 0;
+		int range22 = 0;
 		for (Patient patient : patientList) {
 			if (patient.getDepartment() == "Bogotá D.C.") {
 				list8.put("Bogotá D.C.", range1++);
@@ -221,32 +222,36 @@ public class PatientManager {
 				list8.put("Santander", range7++);
 			} else if (patient.getDepartment() == "Córdoba") {
 				list8.put("Córdoba", range8++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range9++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range10++);
+			} else if (patient.getDepartment() == "Cartagena D.T. y C.") {
+				list8.put("Cartagena D.T. y C.", range9++);
+			} else if (patient.getDepartment() == "Nariño") {
+				list8.put("Nariño", range10++);
 			} else if (patient.getDepartment() == "Córdoba") {
 				list8.put("Córdoba", range11++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range12++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range13++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range14++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range15++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range16++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range17++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range18++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range19++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range20++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range21++);
+			} else if (patient.getDepartment() == "Cesar") {
+				list8.put("Cesar", range12++);
+			} else if (patient.getDepartment() == "Norte de Santander") {
+				list8.put("Norte de Santander", range13++);
+			} else if (patient.getDepartment() == "Meta") {
+				list8.put("Meta", range14++);
+			} else if (patient.getDepartment() == "Sucre") {
+				list8.put("Sucre", range15++);
+			} else if (patient.getDepartment() == "Tolima") {
+				list8.put("Tolima", range16++);
+			} else if (patient.getDepartment() == "Santa Marta D.T. y C.") {
+				list8.put("Santa Marta D.T. y C.", range17++);
+			} else if (patient.getDepartment() == "Risaralda") {
+				list8.put("Risaralda", range18++);
+			} else if (patient.getDepartment() == "Huila") {
+				list8.put("Huila", range19++);
+			} else if (patient.getDepartment() == "Cauca") {
+				list8.put("Cauca", range20++);
+			} else if (patient.getDepartment() == "Caquetá") {
+				list8.put("Caquetá", range21++);
+			} else if (patient.getDepartment() == "Amazonas") {
+				list8.put("Amazonas", range21++);
+			} else if (patient.getDepartment() == "Vichada") {
+				list8.put("Vichada", range22++);
 			}
 		}
 		return list8;
