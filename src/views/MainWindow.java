@@ -20,6 +20,8 @@ public class MainWindow extends JFrame {
 	private AccountType accountType;
 	private BillingAverage billingAverage;
 
+	private Font[] fonts;
+
 	public Font robotoBigBlack;
 	public Font robotoMediumBlack;
 	public Font robotoBigRegular;
@@ -38,25 +40,9 @@ public class MainWindow extends JFrame {
         this.fontsInit();
         componentsInit(listener);
     }
-    //Constructor de prueba NO DEJAR PARA LA VERSION FINAL
-    public MainWindow() {
-        this.setDefaultCloseOperation( EXIT_ON_CLOSE );
-        this.setLocationRelativeTo( null );
-        this.setTitle(ConstantsUI.WINDOW_TITLE);
-        this.setSize(1200, 600);
-        this.setExtendedState(MAXIMIZED_BOTH);
-        this.setVisible(true);
-        this.fontsInit();
-        componentsInit(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-    }
 
     private void componentsInit(ActionListener listener) {
-        mainPanel = new MainPanel(listener);
+        mainPanel = new MainPanel(listener, fonts);
         accountType = new AccountType();
         billingAverage = new BillingAverage();
         this.add(mainPanel);
@@ -115,5 +101,13 @@ public class MainWindow extends JFrame {
         }catch(IOException | FontFormatException e){
             System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
         }
+        fonts = new Font[7];
+        fonts[0] = robotoBigBlack;
+        fonts[1] = robotoMediumBlack;
+        fonts[2] = robotoBigRegular;
+        fonts[3] = robotoMediumRegular;
+        fonts[4] = robotoSmallRegular;
+        fonts[5] = robotoMediumLigth;
+        fonts[6] = awesomeMediumBrand;
     }
 }
