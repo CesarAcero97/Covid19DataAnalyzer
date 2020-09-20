@@ -107,7 +107,7 @@ public class ToolBar extends JToolBar {
 
         JMenuItem reportFive = new JMenuItem(ConstantsUI.REPORT_FIVE);
         reportFive.addActionListener(listener);
-        reportFive.setActionCommand(Commands.REPORT_FOUR.toString());
+        reportFive.setActionCommand(Commands.REPORT_FIVE.toString());
         reportsButton.add(reportFive);
 
         JMenuItem reportSix = new JMenuItem(ConstantsUI.REPORT_SIX);

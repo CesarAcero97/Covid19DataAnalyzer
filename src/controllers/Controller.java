@@ -70,6 +70,30 @@ public class Controller implements ActionListener {
 			case REPORT_TWO:
 				this.reportGenerator(2);
 				break;
+			case REPORT_THREE:
+				this.reportGenerator(3);
+				break;
+			case REPORT_FOUR:
+				this.reportGenerator(4);
+				break;
+			case REPORT_FIVE:
+				this.reportGenerator(5);
+				break;
+			case REPORT_SIX:
+				this.reportGenerator(6);
+				break;
+			case REPORT_SEVEN:
+				this.reportGenerator(7);
+				break;
+			case REPORT_EIGHT:
+				this.reportGenerator(8);
+				break;
+			case REPORT_NINE:
+				this.reportGenerator(9);
+				break;
+			case REPORT_TEN:
+				this.reportGenerator(10);
+				break;
 		default:
 			break;
 		}		
