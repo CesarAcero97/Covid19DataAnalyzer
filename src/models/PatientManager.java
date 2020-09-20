@@ -1,6 +1,5 @@
 package models;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -27,12 +26,30 @@ public class PatientManager {
 		patientList.add(patient);
 	}
 	
-	public void addPatient(Patient patient) {
-		int maxID = patientList.size() + 1;
-		if (patient.getID() < patientList.get(patientList.size() + 1).getID()) {
-			patient.setID(maxID);
-			patientList.add(patient);
+	public void addPatient(Patient newPatient) {
+		int id = genID();
+		newPatient.setID(id);
+		for (Patient patient : patientList){
+			if(patient.getID() > id){
+				int index = patientList.indexOf(patient);
+				patientList.add(index, newPatient);
+				return;
+			}
 		}
+		patientList.add(newPatient);
+	}
+
+	private int genID(){
+		int last = 0;
+		int actual = 0;
+		for (int i = 0; i < patientList.size(); i++) {
+			actual = patientList.get(i).getID();
+			if(last+1 != actual)
+				return last+1;
+			else
+				last = actual;
+		}
+		return actual+1;
 	}
 	
 	public void delete(int ID) {
@@ -57,7 +74,7 @@ public class PatientManager {
         return accListObjVersion;
     }
 	
-	// Inicio de métodos de reportes
+	// Inicio de mï¿½todos de reportes
 	
 	public HashMap<String, Integer> report1() {
 		HashMap<String, Integer> list1 = new HashMap<String, Integer>();
@@ -161,8 +178,8 @@ public class PatientManager {
 		for (Patient patient : patientList) {
 			if (patient.getStatus() == "Leve") {
 				list6.put("Leve", range1++);
-			} else if (patient.getStatus() == "Asintomático") {
-				list6.put("Asintomático", range2++);
+			} else if (patient.getStatus() == "Asintomï¿½tico") {
+				list6.put("Asintomï¿½tico", range2++);
 			} else if (patient.getStatus() == "Fallecido") {
 				list6.put("Fallecido", range3++);
 			} else if (patient.getStatus() == "Moderado") {
@@ -215,8 +232,8 @@ public class PatientManager {
 		int range21 = 0;
 		int range22 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getDepartment() == "Bogotá D.C.") {
-				list8.put("Bogotá D.C.", range1++);
+			if (patient.getDepartment() == "Bogotï¿½ D.C.") {
+				list8.put("Bogotï¿½ D.C.", range1++);
 			} else if (patient.getDepartment() == "Antioquia") {
 				list8.put("Antioquia", range2++);
 			} else if (patient.getDepartment() == "Valle del Cauca") {
@@ -225,18 +242,18 @@ public class PatientManager {
 				list8.put("Barranquilla D.E.", range4++);
 			} else if (patient.getDepartment() == "Cundinamarca") {
 				list8.put("Cundinamarca", range5++);
-			} else if (patient.getDepartment() == "Atlántico") {
-				list8.put("Atlántico", range6++);
+			} else if (patient.getDepartment() == "Atlï¿½ntico") {
+				list8.put("Atlï¿½ntico", range6++);
 			} else if (patient.getDepartment() == "Santander") {
 				list8.put("Santander", range7++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range8++);
+			} else if (patient.getDepartment() == "Cï¿½rdoba") {
+				list8.put("Cï¿½rdoba", range8++);
 			} else if (patient.getDepartment() == "Cartagena D.T. y C.") {
 				list8.put("Cartagena D.T. y C.", range9++);
-			} else if (patient.getDepartment() == "Nariño") {
-				list8.put("Nariño", range10++);
-			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range11++);
+			} else if (patient.getDepartment() == "Nariï¿½o") {
+				list8.put("Nariï¿½o", range10++);
+			} else if (patient.getDepartment() == "Cï¿½rdoba") {
+				list8.put("Cï¿½rdoba", range11++);
 			} else if (patient.getDepartment() == "Cesar") {
 				list8.put("Cesar", range12++);
 			} else if (patient.getDepartment() == "Norte de Santander") {
@@ -255,8 +272,8 @@ public class PatientManager {
 				list8.put("Huila", range19++);
 			} else if (patient.getDepartment() == "Cauca") {
 				list8.put("Cauca", range20++);
-			} else if (patient.getDepartment() == "Caquetá") {
-				list8.put("Caquetá", range21++);
+			} else if (patient.getDepartment() == "Caquetï¿½") {
+				list8.put("Caquetï¿½", range21++);
 			} else if (patient.getDepartment() == "Amazonas") {
 				list8.put("Amazonas", range21++);
 			} else if (patient.getDepartment() == "Vichada") {
@@ -294,6 +311,6 @@ public class PatientManager {
 		return list10;
 	}
 	
-	// Fin de métodos de reportes
+	// Fin de mï¿½todos de reportes
 
 }

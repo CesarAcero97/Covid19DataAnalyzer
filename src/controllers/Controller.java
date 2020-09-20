@@ -70,7 +70,7 @@ public class Controller implements ActionListener {
 	}
 
 	private void createPatient(){
-		manager.add(mainWindow.getPatient());
+		manager.addPatient(mainWindow.getPatient());
 	}
 
 	private void removePatient(){
