@@ -262,7 +262,7 @@ public class PatientManager {
 		int range1 = 0;
 		int range2 = 0;
 		int range3 = 0;
-		for (Patient patient : patientList) {
+		/*for (Patient patient : patientList) {
 			if () {
 				list9.put("Menores de 30", range1++);
 			} else if () {
@@ -270,8 +270,9 @@ public class PatientManager {
 			} else if () {
 				list9.put("Mayores de 40", range3++);
 			}
-		}
-		return list9;
+		}*/
+//		return list9;
+		return null;
 	}
 	
 	public HashMap<String, Integer> report10() {
@@ -279,7 +280,7 @@ public class PatientManager {
 		int range1 = 0;
 		int range2 = 0;
 		int range3 = 0;
-		for (Patient patient : patientList) {
+		/*for (Patient patient : patientList) {
 			if () {
 				list10.put("Menores de 30", range1++);
 			} else if () {
@@ -287,8 +288,9 @@ public class PatientManager {
 			} else if () {
 				list10.put("Mayores de 40", range3++);
 			}
-		}
-		return list10;
+		}*/
+//		return list10;
+		return null;
 	}
 	
 	// Fin de métodos de reportes
