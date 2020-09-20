@@ -1,5 +1,6 @@
 package views.body;
 
+import models.Patient;
 import views.ConstantsUI;
 import views.modifiers.TableBorder;
 

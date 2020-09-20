@@ -1,5 +1,6 @@
 package views.body;
 
+import models.Patient;
 import views.header.HeaderPanel;
 import views.modifiers.TableBorder;
 

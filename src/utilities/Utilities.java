@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Properties;
 
 public class Utilities {
@@ -20,5 +23,11 @@ public class Utilities {
 		FileOutputStream output = new FileOutputStream(pathFile);
 		properties.store(output, null);
 		output.close();
+	}
+
+	public static LocalDate convertToLocalDate(Date dateToConvert) {
+		return dateToConvert.toInstant()
+				.atZone(ZoneId.systemDefault())
+				.toLocalDate();
 	}
 }

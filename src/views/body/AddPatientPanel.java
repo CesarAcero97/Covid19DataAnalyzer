@@ -2,17 +2,15 @@ package views.body;
 
 import com.toedter.calendar.JDateChooser;
 import controllers.Commands;
+import models.Patient;
+import utilities.Utilities;
 import views.ConstantsUI;
 import views.modifiers.RoundedJButton;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.DefaultFormatter;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Vector;
 
 public class AddPatientPanel extends JDialog {
 
@@ -212,23 +210,29 @@ public class AddPatientPanel extends JDialog {
         infoText.setText(errorMsg);
         infoText.setForeground(Color.red);
     }
-
+*/
     private void clearAreas(){
-        requestTypeBox.setSelectedItem(RequestType.FIRTS_TIME);
-        personTypeBox.setSelectedItem(PersonType.LEGAL_PERSON);
+        sex.setSelectedItem(0);
+        type.setSelectedItem(0);
+        attention.setSelectedItem(0);
         city.setText("");
-        documentTypeBox.setSelectedItem(DocumentType.CITIZENSHIP_ID);
-        documentNumber.setText("");
-        employees.setValue(5);
+        department.setText("");
+        age.setText("");
+        status.setText("");
+        countryOfOrigin.setText("");
+        recoveryType.setText("");
         admissionDate.setDate(null);
+        firtsSymptomsDate.setDate(null);
+        diagnosticDate.setDate(null);
+        recoveryDate.setDate(null);
     }
 
-    private Request createRequest(){
+    public Patient getPatient(){
         this.setVisible(false);
-        Request request = new Request((RequestType) requestTypeBox.getSelectedItem(), (PersonType) personTypeBox.getSelectedItem(), city.getText(), (DocumentType) documentTypeBox.getSelectedItem(), documentNumber.getText(), (int) employees.getValue(), admissionDate.getDate());
+        Patient patient = new Patient(0, Utilities.convertToLocalDate(admissionDate.getDate()), city.getText(), department.getText(), (String) attention.getSelectedItem(), Byte.parseByte(age.getText()), (String) sex.getSelectedItem(), (String) type.getSelectedItem(), status.getText(), countryOfOrigin.getText(),  Utilities.convertToLocalDate(firtsSymptomsDate.getDate()),  Utilities.convertToLocalDate(diagnosticDate.getDate()),  Utilities.convertToLocalDate(recoveryDate.getDate()), recoveryType.getText());
         clearAreas();
-        return request;
+        return patient;
     }
 
-     */
+
 }

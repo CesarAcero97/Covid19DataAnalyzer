@@ -1,5 +1,6 @@
 package views;
 
+import models.Patient;
 import views.body.AddPatientPanel;
 import views.body.MainPanel;
 import views.reports.AccountType;
@@ -78,6 +79,10 @@ public class MainWindow extends JFrame {
     public void makeInvisibleDialogs(){
         if (addPatientPanel != null)
             addPatientPanel.setVisible(false);
+    }
+
+    public Patient getPatient(){
+        return addPatientPanel.getPatient();
     }
 
     //Font Init
