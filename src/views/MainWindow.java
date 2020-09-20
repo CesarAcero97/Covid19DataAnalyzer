@@ -64,6 +64,10 @@ public class MainWindow extends JFrame {
         billingAverage.setValues(values);
     }
 
+    public int getSelectedId(){
+        return mainPanel.getSelectedId();
+    }
+
     //Font Init
 
     private void fontsInit(){

@@ -86,5 +86,10 @@ public class TableElementsPanel extends JPanel{
         }
     }
 
+    public int getSelectedId(){
+        Object id = table.getValueAt(table.getSelectedRow(), 0);
+        return (Integer) id;
+    }
+
 
 }

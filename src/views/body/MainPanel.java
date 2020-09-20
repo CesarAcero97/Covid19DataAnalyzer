@@ -43,4 +43,8 @@ public class MainPanel extends JPanel {
             return null;
         }
     }
+
+    public int getSelectedId(){
+        return tablePanel.getSelectedId();
+    }
 }

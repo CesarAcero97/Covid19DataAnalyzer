@@ -47,9 +47,20 @@ public class Controller implements ActionListener {
 			this.manageExitApp();
 			case REFRESH:
 				this.refresh();
+				break;
+			case REMOVE_PATIENT:
+				this.removePatient();
+				break;
 		default:
 			break;
 		}		
+	}
+
+	private void removePatient(){
+		int id = mainWindow.getSelectedId();
+		System.out.println(id);
+		//manager.delete(id);
+		refresh();
 	}
 
 	private void webData(){
