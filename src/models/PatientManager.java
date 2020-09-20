@@ -1,5 +1,6 @@
 package models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -59,17 +60,17 @@ public class PatientManager {
 		int na = 0;
 		int uci = 0;
 		for (Patient patient : patientList) {
-			if (patient.getStatus() == "Recuperado") {
+			if (patient.getAttention() == "Recuperado") {
 				list1.put("Recuperados", recovered++);
-			} else if (patient.getStatus() == "Casa") {
+			} else if (patient.getAttention() == "Casa") {
 				list1.put("En casa", house++);
-			} else if (patient.getStatus() == "Fallecido") {
+			} else if (patient.getAttention() == "Fallecido") {
 				list1.put("Fallecidos", deceased++);
-			} else if (patient.getStatus() == "Hospital") {
+			} else if (patient.getAttention() == "Hospital") {
 				list1.put("En hospital", hospital++);
-			} else if (patient.getStatus() == "N/A") {
+			} else if (patient.getAttention() == "N/A") {
 				list1.put("N/A", na++);
-			} else if (patient.getStatus() == "Hospital UCI") {
+			} else if (patient.getAttention() == "Hospital UCI") {
 				list1.put("En UCIs", uci++);
 			}
 		}
@@ -99,9 +100,9 @@ public class PatientManager {
 		int F = 0;
 		for (Patient patient : patientList) {
 			if (patient.getSex() == "M") {
-				list3.put("Menores de 30", M++);
+				list3.put("Hombres", M++);
 			} else if (patient.getSex() == "F") {
-				list3.put("30 - 40", F++);
+				list3.put("Mujeres", F++);
 			}
 		}
 		return list3;
@@ -262,35 +263,27 @@ public class PatientManager {
 		int range1 = 0;
 		int range2 = 0;
 		int range3 = 0;
-		/*for (Patient patient : patientList) {
-			if () {
-				list9.put("Menores de 30", range1++);
-			} else if () {
-				list9.put("30 - 40", range2++);
-			} else if () {
-				list9.put("Mayores de 40", range3++);
+		for (Patient patient : patientList) {
+			if (patient.getFirstSymptomsDate().getMonthValue() == 7) {
+				list9.put("Mes de Julio", range1++);
+			} else if (patient.getFirstSymptomsDate().getMonthValue() == 8) {
+				list9.put("Mes de Agosto", range2++);
+			} else if (patient.getFirstSymptomsDate().getMonthValue() == 9) {
+				list9.put("Mes de Septiembre", range3++);
 			}
-		}*/
-//		return list9;
-		return null;
+		}
+		return list9;
 	}
 	
 	public HashMap<String, Integer> report10() {
 		HashMap<String, Integer> list10 = new HashMap<String, Integer>();
 		int range1 = 0;
-		int range2 = 0;
-		int range3 = 0;
-		/*for (Patient patient : patientList) {
-			if () {
-				list10.put("Menores de 30", range1++);
-			} else if () {
-				list10.put("30 - 40", range2++);
-			} else if () {
-				list10.put("Mayores de 40", range3++);
+		for (Patient patient : patientList) {
+			if (patient.getCity() == "Tunja") {
+				list10.put("Resultados en Tunja", range1++);
 			}
-		}*/
-//		return list10;
-		return null;
+		}
+		return list10;
 	}
 	
 	// Fin de métodos de reportes
