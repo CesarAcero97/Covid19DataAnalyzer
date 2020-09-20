@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 public class JsonFileManager {
 
+    private FileReader reader;
+
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
@@ -41,7 +43,17 @@ public class JsonFileManager {
         }
         return "";
     }
-    
+
+    public String readFileFromPath(String path) throws IOException {
+        BufferedReader bReader = new BufferedReader(reader);
+        String fileLine;
+        StringBuilder fileContent = new StringBuilder();
+        while((fileLine = bReader.readLine()) != null)
+            fileContent.append(fileLine);
+        bReader.close();
+        return fileContent.toString();
+    }
+
     public static void writeJsonFile(ArrayList<Patient> patientList) {
     	try {
     	    Writer writer = new FileWriter("patients.cvd");
@@ -51,8 +63,18 @@ public class JsonFileManager {
     	    ex.printStackTrace();
     	}
     }
+
+    public PatientFull[] readJsonLocal(String path){
+        String text = "";
+        try{
+            text = readFileFromPath(path);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return new Gson().fromJson(text, PatientFull[].class);
+    }
     
-    public PatientFull[] readJson(String url){
+    public PatientFull[] readJsonWeb(String url){
         String text = readFileFromUrl(url);
         return new Gson().fromJson(text, PatientFull[].class);
     }

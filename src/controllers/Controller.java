@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 
 import models.PatientFull;
 import models.PatientManager;
-import org.jfree.chart.util.ArrayUtils;
 import persistence.HandlerLanguage;
 import persistence.JsonFileManager;
 import views.ConstantsUI;
@@ -176,13 +175,13 @@ public class Controller implements ActionListener {
 
 	private void webData(){
 		JsonFileManager reader = new JsonFileManager();
-		PatientFull[] basicList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json");
+		PatientFull[] basicList = reader.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json");
 		manager.addList(basicList);
-		PatientFull[] boyacaList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Boyac%C3%A1");
+		PatientFull[] boyacaList = reader.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Boyac%C3%A1");
 		manager.addList(boyacaList);
-		PatientFull[] antioquiaList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Antioquia");
+		PatientFull[] antioquiaList = reader.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Antioquia");
 		manager.addList(antioquiaList);
-		PatientFull[] huilaList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Huila");
+		PatientFull[] huilaList = reader.readJsonWeb("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Huila");
 		manager.addList(huilaList);
 		this.refresh();
 	}
