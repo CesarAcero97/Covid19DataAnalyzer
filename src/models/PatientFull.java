@@ -36,6 +36,8 @@ public class PatientFull{
 	}
 
 	private LocalDate date(String dateText){
+		if (dateText == null)
+			return LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		byte index = (byte)dateText.indexOf("T");
 		dateText = dateText.substring(0, index);

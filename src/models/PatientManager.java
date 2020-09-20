@@ -3,14 +3,22 @@ package models;
 import java.util.ArrayList;
 
 public class PatientManager {
-	private ArrayList<Patient> patientList;
+
+	private ConverterThread converterThread;
+	protected ArrayList<Patient> patientList;
 
 	public PatientManager() {
 		patientList = new ArrayList<>();
+		converterThread = new ConverterThread();
+		converterThread.run(this);
 	}
 	
 	public void addList(ArrayList<Patient> list){
 		patientList.addAll(list);
+	}
+
+	public void addList(PatientFull[] list){
+		converterThread.addList(list);
 	}
 
 	public ArrayList<Patient> getPatientList() {

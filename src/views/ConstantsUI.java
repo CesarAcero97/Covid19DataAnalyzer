@@ -43,6 +43,7 @@ public class ConstantsUI {
     public static final String PATH_ROBOTO_LIGHT = PATH_USER + "/src/resources/fonts/Roboto-Light.ttf";
     public static final String PATH_AWESEOME_BRAND = PATH_USER + "/src/resources/fonts/fa-brands-400.ttf";
     public static final String EXCEPTION_MSG_FONT_ERROR = "No se puede cargar la fuente";
+    public static final String MESSAGE_EXIT_APP = "Salir de la aplicación";
 
     //Colors
     public static Color MAIN_COLOR = Color.decode("#2d2d2d");

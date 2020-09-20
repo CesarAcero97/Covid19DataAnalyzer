@@ -1,17 +1,19 @@
 package controllers;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
 import persistence.HandlerLanguage;
 import views.ConstantsUI;
+import views.MainWindow;
 //import views.JFMainWindow;
 
-public class Controller {
+public class Controller implements ActionListener {
 	
-	/*private JFMainWindow jfMainWindow;
+	private MainWindow mainWindow;
 
 	private static final String ENGLISH_PATH = "resources/languages/languageUS.properties";
 	private static final String SPANISH_PATH = "resources/languages/languageES.properties";
@@ -19,12 +21,11 @@ public class Controller {
 
 	private HandlerLanguage config;
 
-	public ControllerApp() {
+	public Controller() {
 		loadConfiguration();
-		jfMainWindow = new JFMainWindow(this);
-		this.jfMainWindow.setVisible( true );
+        mainWindow = new MainWindow(this);
+        mainWindow.setVisible( true );
 	}
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -59,7 +60,7 @@ public class Controller {
 		try{
 			config.loadLanguage();
 		}catch(IOException e){
-			JOptionPane.showMessageDialog(jfMainWindow, e.getMessage());
+			JOptionPane.showMessageDialog(mainWindow, e.getMessage());
 		}
 	}
 
@@ -67,7 +68,7 @@ public class Controller {
 		try {
 			changeToEnglish();
 		} catch (IOException e1) {
-			JOptionPane.showMessageDialog(jfMainWindow, e1.getMessage());
+			JOptionPane.showMessageDialog(mainWindow, e1.getMessage());
 		}			
 		manageChangeLanguage();
 	}
@@ -76,19 +77,19 @@ public class Controller {
 		try {
 			changeToSpanish();
 		} catch (IOException e1) {
-			JOptionPane.showMessageDialog(jfMainWindow, e1.getMessage());
+			JOptionPane.showMessageDialog(mainWindow, e1.getMessage());
 		}	
 		manageChangeLanguage();
 	}
 
 	private void manageChangeLanguage(){
-		jfMainWindow.changeLanguage();		
+        //mainWindow.changeLanguage();
 	}
 	public void loadLanguage(){
 		try {
 			config.loadLanguage();
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(jfMainWindow, e.getMessage());
+			JOptionPane.showMessageDialog(mainWindow, e.getMessage());
 		}
 	}
 
@@ -96,7 +97,7 @@ public class Controller {
 		try {
 			new HandlerLanguage(NAME_FILE_CONFIG).saveLanguage();
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(jfMainWindow, e.getMessage());
+			JOptionPane.showMessageDialog(mainWindow, e.getMessage());
 		}
 	}
 
@@ -110,5 +111,9 @@ public class Controller {
 		HandlerLanguage.language = SPANISH_PATH;
 		saveConfig();
 		loadLanguage();
-	}*/
+	}
+
+    public static void main(String[] args) {
+        new Controller();
+    }
 }
