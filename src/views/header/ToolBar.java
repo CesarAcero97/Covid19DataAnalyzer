@@ -84,13 +84,14 @@ public class ToolBar extends JToolBar {
         reportsButton.setIcon(new ImageIcon(reportsIcon));
         reportsButton.setToolTipText( ConstantsUI.REPORTS );
         reportsButton.setBorderPainted(false);
-        JMenuItem userPercentage = new JMenuItem(ConstantsUI.USER_AMOUNT);
-        userPercentage.addActionListener(listener);
-        //userPercentage.setActionCommand(Commands.ACCOUNT_TYPE_REPORT.toString());
+        JMenuItem reportOne = new JMenuItem(ConstantsUI.REPORT_ONE);
+        reportOne.addActionListener(listener);
+        reportOne.setActionCommand(Commands.REPORT_ONE.toString());
+        reportsButton.add(reportOne);
         JMenuItem userAverage = new JMenuItem(ConstantsUI.USER_AVRG);
         //userAverage.setActionCommand(Commands.BILLING_AVERAGE_REPORT.toString());
         userAverage.addActionListener(listener);
-        reportsButton.add(userPercentage);
+
         reportsButton.add(userAverage);
         reportsBar.add(reportsButton);
         this.add(reportsBar);

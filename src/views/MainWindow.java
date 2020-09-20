@@ -3,12 +3,9 @@ package views;
 import models.Patient;
 import views.body.AddPatientPanel;
 import views.body.MainPanel;
-import views.reports.AccountType;
-import views.reports.BillingAverage;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -19,8 +16,6 @@ public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private MainPanel mainPanel;
-	private AccountType accountType;
-	private BillingAverage billingAverage;
 	private AddPatientPanel addPatientPanel;
 
 	private Font[] fonts;
@@ -46,26 +41,12 @@ public class MainWindow extends JFrame {
 
     private void componentsInit(ActionListener listener) {
         mainPanel = new MainPanel(listener, fonts);
-        accountType = new AccountType();
-        billingAverage = new BillingAverage();
         addPatientPanel = new AddPatientPanel(listener, fonts);
         this.add(mainPanel);
     }
 
     public void refreshTable(Object[][] list){
         mainPanel.refreshTable(list);
-    }
-
-    public String showFileDialog(){
-        return mainPanel.showFileDialog();
-    }
-
-    public void showAccountTypeRep(int[] values){
-        accountType.setValues(values);
-    }
-
-    public void showBillingAverageRep(double[] values){
-        billingAverage.setValues(values);
     }
 
     public int getSelectedId(){

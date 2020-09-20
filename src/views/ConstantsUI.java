@@ -20,13 +20,6 @@ public class ConstantsUI {
     public static final String ADD_PATIENT = "Añadir Paciente";
     public static final String USER_AMOUNT = "Usuarios por tipo de conexion";
     public static final String USER_AVRG = "Promedio de facturacion por estrato";
-    public static final String COMMERCIAL = "Comercial";
-    public static final String DOMESTIC = "Domestico";
-    public static final String STRATUM_ONE = "Estrato 1";
-    public static final String STRATUM_TWO = "Estrato 2";
-    public static final String STRATUM_THREE = "Estrato 3";
-    public static final String STRATUM_FOUR = "Estrato 4";
-    public static final String STRATUM_FIVE = "Estrato 5";
     public static final String PATH_USER = System.getProperty("user.dir");
     public static final String PATH_ROBOTO_BLACK = PATH_USER + "/src/resources/fonts/Roboto-Black.ttf";
     public static final String PATH_ROBOTO_REGULAR = PATH_USER + "/src/resources/fonts/Roboto-Regular.ttf";
@@ -53,6 +46,17 @@ public class ConstantsUI {
     public static final String CANCEL = "Cancelar";
     public static final String CREATE = "Crear";
 
+    //Reports
+    public static final String REPORT_ONE = "Crear";
+    public static final String REPORT_TWO = "Crear";
+    public static final String REPORT_THREE = "Crear";
+    public static final String REPORT_FOUR = "Crear";
+    public static final String REPORT_FIVE = "Crear";
+    public static final String REPORT_SIX = "Crear";
+    public static final String REPORT_SEVEN = "Crear";
+    public static final String REPORT_EIGHT = "Crear";
+    public static final String REPORT_NINE = "Crear";
+    public static final String REPORT_TEN = "Crear";
 
     //Colors
     public static Color MAIN_COLOR = Color.decode("#2196F3");

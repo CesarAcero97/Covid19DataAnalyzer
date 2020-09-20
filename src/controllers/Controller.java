@@ -37,6 +37,8 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		switch ( Commands.valueOf( e.getActionCommand() ) ) {
+			case EXIT_APP:
+				this.manageExitApp();
 			case ADD_PATIENT:
 				this.addPatient();
 				break;
@@ -58,8 +60,9 @@ public class Controller implements ActionListener {
 			case C_US_LANGUAGE:
 				manageChangeLanguageUS();
 			break;
-			case EXIT_APP:
-				this.manageExitApp();
+			//----------------------REPORTS COMMANDS--------
+			case REPORT_ONE:
+
 		default:
 			break;
 		}		
