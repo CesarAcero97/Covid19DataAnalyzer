@@ -57,86 +57,173 @@ public class PatientManager {
 		int deceased = 0;
 		int hospital = 0;
 		int na = 0;
-		int hospitalUCI = 0;
-//		ArrayList<Patient> report1List = new ArrayList<>();
+		int uci = 0;
 		for (Patient patient : patientList) {
 			if (patient.getStatus() == "Recuperado") {
 				list1.put("Recuperados", recovered++);
-//				report1List.add(patient);
 			} else if (patient.getStatus() == "Casa") {
-				
+				list1.put("En casa", house++);
 			} else if (patient.getStatus() == "Fallecido") {
-				
+				list1.put("Fallecidos", deceased++);
 			} else if (patient.getStatus() == "Hospital") {
-				
+				list1.put("En hospital", hospital++);
 			} else if (patient.getStatus() == "N/A") {
-				
+				list1.put("N/A", na++);
 			} else if (patient.getStatus() == "Hospital UCI") {
-				
+				list1.put("En UCIs", uci++);
 			}
 		}
 		return list1;
 	}
 	
-	public ArrayList<Patient> report2() {
-		ArrayList<Patient> report2List = new ArrayList<>();
+	public HashMap<String, Integer> report2() {
+		HashMap<String, Integer> list2 = new HashMap<String, Integer>();
+		int range1 = 0;
+		int range2 = 0;
+		int range3 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getStatus() == "Recuperado") {
-				report2List.add(patient);
+			if (patient.getAge() < 30) {
+				list2.put("Menores de 30", range1++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list2.put("30 - 40", range2++);
+			} else if (patient.getAge() > 40) {
+				list2.put("Mayores de 40", range3++);
 			}
 		}
-		return report2List;
+		return list2;
 	}
 	
-	public ArrayList<Patient> report3() {
-		ArrayList<Patient> report3List = new ArrayList<>();
+	public HashMap<String, Integer> report3() {
+		HashMap<String, Integer> list3 = new HashMap<String, Integer>();
+		int M = 0;
+		int F = 0;
 		for (Patient patient : patientList) {
-			if (patient.getStatus() == "Recuperado") {
-				report3List.add(patient);
+			if (patient.getAge() < 30) {
+				list3.put("Menores de 30", M++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list3.put("30 - 40", F++);
 			}
-		}		return report3List;
+		}
+		return list3;
 	}
 	
-	public ArrayList<Patient> report4() {
-		ArrayList<Patient> report4List = new ArrayList<>();
-		String url = "https://www.datos.gov.co/resource/gt2j-8ykr.json?tipo_recuperac_n=Tiempo&";
-		return report4List;
+	public HashMap<String, Integer> report4() {
+		HashMap<String, Integer> list4 = new HashMap<String, Integer>();
+		int range1 = 0;
+		int range2 = 0;
+		int range3 = 0;
+		for (Patient patient : patientList) {
+			if (patient.getAge() < 30) {
+				list4.put("Menores de 30", range1++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list4.put("30 - 40", range2++);
+			} else if (patient.getAge() > 40) {
+				list4.put("Mayores de 40", range3++);
+			}
+		}
+		return list4;
 	}
 	
-	public ArrayList<Patient> report5() {
-		ArrayList<Patient> report5List = new ArrayList<>();
-		String url = "https://www.datos.gov.co/resource/gt2j-8ykr.json?";
-		return report5List;
+	public HashMap<String, Integer> report5() {
+		HashMap<String, Integer> list5 = new HashMap<String, Integer>();
+		int range1 = 0;
+		int range2 = 0;
+		int range3 = 0;
+		for (Patient patient : patientList) {
+			if (patient.getAge() < 30) {
+				list5.put("Menores de 30", range1++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list5.put("30 - 40", range2++);
+			} else if (patient.getAge() > 40) {
+				list5.put("Mayores de 40", range3++);
+			}
+		}
+		return list5;
 	}
 	
-	public ArrayList<Patient> report6() {
-		ArrayList<Patient> report6List = new ArrayList<>();
-		String url = "https://www.datos.gov.co/resource/gt2j-8ykr.json?";
-		return report6List;
+	public HashMap<String, Integer> report6() {
+		HashMap<String, Integer> list6 = new HashMap<String, Integer>();
+		int range1 = 0;
+		int range2 = 0;
+		int range3 = 0;
+		for (Patient patient : patientList) {
+			if (patient.getAge() < 30) {
+				list6.put("Menores de 30", range1++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list6.put("30 - 40", range2++);
+			} else if (patient.getAge() > 40) {
+				list6.put("Mayores de 40", range3++);
+			}
+		}
+		return list6;
 	}
 	
-	public ArrayList<Patient> report7() {
-		ArrayList<Patient> report7List = new ArrayList<>();
-		String url = "https://www.datos.gov.co/resource/gt2j-8ykr.json?";
-		return report7List;
+	public HashMap<String, Integer> report7() {
+		HashMap<String, Integer> list7 = new HashMap<String, Integer>();
+		int range1 = 0;
+		int range2 = 0;
+		int range3 = 0;
+		for (Patient patient : patientList) {
+			if (patient.getAge() < 30) {
+				list7.put("Menores de 30", range1++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list7.put("30 - 40", range2++);
+			} else if (patient.getAge() > 40) {
+				list7.put("Mayores de 40", range3++);
+			}
+		}
+		return list7;
 	}
 	
-	public ArrayList<Patient> report8() {
-		ArrayList<Patient> report8List = new ArrayList<>();
-		String url = "https://www.datos.gov.co/resource/gt2j-8ykr.json?";
-		return report8List;
+	public HashMap<String, Integer> report8() {
+		HashMap<String, Integer> list8 = new HashMap<String, Integer>();
+		int range1 = 0;
+		int range2 = 0;
+		int range3 = 0;
+		for (Patient patient : patientList) {
+			if (patient.getAge() < 30) {
+				list8.put("Menores de 30", range1++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list8.put("30 - 40", range2++);
+			} else if (patient.getAge() > 40) {
+				list8.put("Mayores de 40", range3++);
+			}
+		}
+		return list8;
 	}
 	
-	public ArrayList<Patient> report9() {
-		ArrayList<Patient> report9List = new ArrayList<>();
-		String url = "https://www.datos.gov.co/resource/gt2j-8ykr.json?";
-		return report9List;
+	public HashMap<String, Integer> report9() {
+		HashMap<String, Integer> list9 = new HashMap<String, Integer>();
+		int range1 = 0;
+		int range2 = 0;
+		int range3 = 0;
+		for (Patient patient : patientList) {
+			if (patient.getAge() < 30) {
+				list9.put("Menores de 30", range1++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list9.put("30 - 40", range2++);
+			} else if (patient.getAge() > 40) {
+				list9.put("Mayores de 40", range3++);
+			}
+		}
+		return list9;
 	}
 	
-	public ArrayList<Patient> report10() {
-		ArrayList<Patient> report10List = new ArrayList<>();
-		String url = "https://www.datos.gov.co/resource/gt2j-8ykr.json?";
-		return report10List;
+	public HashMap<String, Integer> report10() {
+		HashMap<String, Integer> list10 = new HashMap<String, Integer>();
+		int range1 = 0;
+		int range2 = 0;
+		int range3 = 0;
+		for (Patient patient : patientList) {
+			if (patient.getAge() < 30) {
+				list10.put("Menores de 30", range1++);
+			} else if (patient.getAge() >= 30 && patient.getAge() <= 40) {
+				list10.put("30 - 40", range2++);
+			} else if (patient.getAge() > 40) {
+				list10.put("Mayores de 40", range3++);
+			}
+		}
+		return list10;
 	}
 	
 	// Fin de métodos de reportes
