@@ -20,7 +20,6 @@ public class PieReport extends JFrame {
         super(title);
         setSize(800, 400);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         PieDataset dataset = hashMapToDataSet(data);
         JFreeChart chart = ChartFactory.createPieChart(title, dataset, true, true, false);
