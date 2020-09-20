@@ -47,16 +47,27 @@ public class ConstantsUI {
     public static final String CREATE = "Crear";
 
     //Reports
-    public static final String REPORT_ONE = "Crear";
-    public static final String REPORT_TWO = "Crear";
-    public static final String REPORT_THREE = "Crear";
-    public static final String REPORT_FOUR = "Crear";
-    public static final String REPORT_FIVE = "Crear";
-    public static final String REPORT_SIX = "Crear";
-    public static final String REPORT_SEVEN = "Crear";
-    public static final String REPORT_EIGHT = "Crear";
-    public static final String REPORT_NINE = "Crear";
-    public static final String REPORT_TEN = "Crear";
+    public static final String REPORT_ONE = "Atencion";
+    public static final String REPORT_TWO = "Edad";
+    public static final String REPORT_THREE = "Sexo";
+    public static final String REPORT_FOUR = "Reportados en Boyacá";
+    public static final String REPORT_FIVE = "Tipo de Contagio";
+    public static final String REPORT_SIX = "Estado";
+    public static final String REPORT_SEVEN = "Recuperación";
+    public static final String REPORT_EIGHT = "Departamentos";
+    public static final String REPORT_NINE = "Casos en ultimos meses";
+    public static final String REPORT_TEN = "Casos en Tunja";
+
+    public static final String REPORT_ONE_TITLE = "Reporte de atención dada a los pacientes";
+    public static final String REPORT_TWO_TITLE = "Reporte rango de edad de los pacientes";
+    public static final String REPORT_THREE_TITLE = "Reporte de pacientes según su sexo";
+    public static final String REPORT_FOUR_TITLE = "Reporte casos en Boyacá";
+    public static final String REPORT_FIVE_TITLE = "Reporte por tipo de tontagio";
+    public static final String REPORT_SIX_TITLE = "Reporte por estado de pacientes";
+    public static final String REPORT_SEVEN_TITLE = "Reporte de recuperación de pacientes";
+    public static final String REPORT_EIGHT_TITLE = "Reporte por departamento";
+    public static final String REPORT_NINE_TITLE = "Reporte de casos en meses julio, agosto y septiembre";
+    public static final String REPORT_TEN_TITLE = "Reporte casos en Tunja";
 
     //Colors
     public static Color MAIN_COLOR = Color.decode("#2196F3");

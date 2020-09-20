@@ -84,15 +84,57 @@ public class ToolBar extends JToolBar {
         reportsButton.setIcon(new ImageIcon(reportsIcon));
         reportsButton.setToolTipText( ConstantsUI.REPORTS );
         reportsButton.setBorderPainted(false);
+
         JMenuItem reportOne = new JMenuItem(ConstantsUI.REPORT_ONE);
         reportOne.addActionListener(listener);
         reportOne.setActionCommand(Commands.REPORT_ONE.toString());
         reportsButton.add(reportOne);
-        JMenuItem userAverage = new JMenuItem(ConstantsUI.USER_AVRG);
-        //userAverage.setActionCommand(Commands.BILLING_AVERAGE_REPORT.toString());
-        userAverage.addActionListener(listener);
 
-        reportsButton.add(userAverage);
+        JMenuItem reportTwo = new JMenuItem(ConstantsUI.REPORT_TWO);
+        reportTwo.addActionListener(listener);
+        reportTwo.setActionCommand(Commands.REPORT_TWO.toString());
+        reportsButton.add(reportTwo);
+
+        JMenuItem reportThree = new JMenuItem(ConstantsUI.REPORT_THREE);
+        reportThree.addActionListener(listener);
+        reportThree.setActionCommand(Commands.REPORT_THREE.toString());
+        reportsButton.add(reportThree);
+
+        JMenuItem reportFour = new JMenuItem(ConstantsUI.REPORT_FOUR);
+        reportFour.addActionListener(listener);
+        reportFour.setActionCommand(Commands.REPORT_FOUR.toString());
+        reportsButton.add(reportFour);
+
+        JMenuItem reportFive = new JMenuItem(ConstantsUI.REPORT_FIVE);
+        reportFive.addActionListener(listener);
+        reportFive.setActionCommand(Commands.REPORT_FOUR.toString());
+        reportsButton.add(reportFive);
+
+        JMenuItem reportSix = new JMenuItem(ConstantsUI.REPORT_SIX);
+        reportSix.addActionListener(listener);
+        reportSix.setActionCommand(Commands.REPORT_SIX.toString());
+        reportsButton.add(reportSix);
+
+        JMenuItem reportSeven = new JMenuItem(ConstantsUI.REPORT_SEVEN);
+        reportSeven.addActionListener(listener);
+        reportSeven.setActionCommand(Commands.REPORT_SEVEN.toString());
+        reportsButton.add(reportSeven);
+
+        JMenuItem reportEight = new JMenuItem(ConstantsUI.REPORT_EIGHT);
+        reportEight.addActionListener(listener);
+        reportEight.setActionCommand(Commands.REPORT_EIGHT.toString());
+        reportsButton.add(reportEight);
+
+        JMenuItem reportNine = new JMenuItem(ConstantsUI.REPORT_NINE);
+        reportNine.addActionListener(listener);
+        reportNine.setActionCommand(Commands.REPORT_NINE.toString());
+        reportsButton.add(reportNine);
+
+        JMenuItem reportTen = new JMenuItem(ConstantsUI.REPORT_TEN);
+        reportTen.addActionListener(listener);
+        reportTen.setActionCommand(Commands.REPORT_TEN.toString());
+        reportsButton.add(reportTen);
+
         reportsBar.add(reportsButton);
         this.add(reportsBar);
     }

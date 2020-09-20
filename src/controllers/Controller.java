@@ -3,15 +3,18 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.swing.JOptionPane;
 
 import models.PatientFull;
 import models.PatientManager;
+import org.jfree.chart.util.ArrayUtils;
 import persistence.HandlerLanguage;
 import persistence.JsonFileManager;
 import views.ConstantsUI;
 import views.MainWindow;
+import views.reports.PieReport;
 
 
 public class Controller implements ActionListener {
@@ -62,10 +65,68 @@ public class Controller implements ActionListener {
 			break;
 			//----------------------REPORTS COMMANDS--------
 			case REPORT_ONE:
-
+				this.reportGenerator(1);
+				break;
+			case REPORT_TWO:
+				this.reportGenerator(2);
+				break;
 		default:
 			break;
 		}		
+	}
+
+	//Reports
+
+	private void reportGenerator(int reportId){
+		PieReport report;
+		String title;
+		HashMap<String, Integer> data;
+		switch (reportId){
+			case 1:
+				title = ConstantsUI.REPORT_ONE_TITLE;
+				data = manager.report1();
+				break;
+			case 2:
+				title = ConstantsUI.REPORT_TWO_TITLE;
+				data = manager.report2();
+				break;
+			case 3:
+				title = ConstantsUI.REPORT_THREE_TITLE;
+				data = manager.report3();
+				break;
+			case 4:
+				title = ConstantsUI.REPORT_FOUR_TITLE;
+				data = manager.report4();
+				break;
+			case 5:
+				title = ConstantsUI.REPORT_FIVE_TITLE;
+				data = manager.report5();
+				break;
+			case 6:
+				title = ConstantsUI.REPORT_SIX_TITLE;
+				data = manager.report6();
+				break;
+			case 7:
+				title = ConstantsUI.REPORT_SEVEN_TITLE;
+				data = manager.report7();
+				break;
+			case 8:
+				title = ConstantsUI.REPORT_EIGHT_TITLE;
+				data = manager.report8();
+				break;
+			case  9:
+				title = ConstantsUI.REPORT_NINE_TITLE;
+				data = manager.report9();
+				break;
+			case 10:
+				title = ConstantsUI.REPORT_TEN_TITLE;
+				data = manager.report10();
+				break;
+			default:
+				title = ConstantsUI.EXCEPTION_MSG_FONT_ERROR;
+				data = null;
+		}
+		report = new PieReport(title, data);
 	}
 
 	private void cancelCreation(){
@@ -89,10 +150,15 @@ public class Controller implements ActionListener {
 
 	private void webData(){
 		JsonFileManager reader = new JsonFileManager();
-		PatientFull[] list = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?pertenencia_etnica=Otro");
-		PatientFull[] secondList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Boyac%C3%A1");
-		manager.addList(list);
-		manager.addList(secondList);
+		PatientFull[] basicList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json");
+		manager.addList(basicList);
+		PatientFull[] boyacaList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Boyac%C3%A1");
+		manager.addList(boyacaList);
+		PatientFull[] antioquiaList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Antioquia");
+		manager.addList(antioquiaList);
+		PatientFull[] huilaList = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento=Huila");
+		manager.addList(huilaList);
+		this.refresh();
 	}
 
 	private void refresh(){
