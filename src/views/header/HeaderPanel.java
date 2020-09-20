@@ -12,8 +12,6 @@ public class HeaderPanel extends JPanel {
 
     private void componentsInit(ActionListener listener){
         ToolBar toolBar = new ToolBar(listener);
-        MainMenu mainMenu = new MainMenu(listener);
-        this.add(mainMenu);
         this.add(toolBar);
     }
 

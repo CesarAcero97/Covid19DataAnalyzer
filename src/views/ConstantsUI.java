@@ -28,6 +28,8 @@ public class ConstantsUI {
     public static final String REFRESH = "Actualizar";
     public static final String ARCHIVE = "Archivo";
     public static final String REPORTS = "Reportes";
+    public static final String REMOVE_PATIENT = "Eliminar";
+    public static final String ADD_PATIENT = "Añadir Paciente";
     public static final String USER_AMOUNT = "Usuarios por tipo de conexion";
     public static final String USER_AVRG = "Promedio de facturacion por estrato";
     public static final String COMMERCIAL = "Comercial";
@@ -62,6 +64,9 @@ public class ConstantsUI {
     public static String PATH_EXPORT_ICON = "/resources/imgs/export.png";
     public static String PATH_IMPORT_ICON = "/resources/imgs/import.png";
     public static String PATH_REFRESH_ICON = "/resources/imgs/refresh.png";
+    public static String PATH_ADD_ICON = "/resources/imgs/addP.png";
+    public static String PATH_DELETE_ICON = "/resources/imgs/delete.png";
+    public static String PATH_REPORTS_ICON = "/resources/imgs/reports.png";
     public static String PATH_COLOMBIA_MAP = "/resources/imgs/colombiaMap.jpg";
 
 }
