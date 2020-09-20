@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class PatientManager {
 
@@ -20,6 +21,20 @@ public class PatientManager {
 	public void addList(PatientFull[] list){
 		converterThread.addList(list);
 	}
+	
+	public void add(Patient patient) {
+		patientList.add(patient);
+	}
+	
+	public void delete(int ID) {
+		int index = 0;
+		for (Patient patient : patientList) {
+			if (ID == patient.getID()) {
+				patientList.indexOf(patient);
+			}
+		}
+		patientList.remove(index);
+	}
 
 	public ArrayList<Patient> getPatientList() {
 		return patientList;
@@ -35,14 +50,32 @@ public class PatientManager {
 	
 	// Inicio de métodos de reportes
 	
-	public ArrayList<Patient> report1() {
-		ArrayList<Patient> report1List = new ArrayList<>();
+	public HashMap<String, Integer> report1() {
+		HashMap<String, Integer> list1 = new HashMap<String, Integer>();
+		int recovered = 0;
+		int house = 0;
+		int deceased = 0;
+		int hospital = 0;
+		int na = 0;
+		int hospitalUCI = 0;
+//		ArrayList<Patient> report1List = new ArrayList<>();
 		for (Patient patient : patientList) {
 			if (patient.getStatus() == "Recuperado") {
-				report1List.add(patient);
+				list1.put("Recuperados", recovered++);
+//				report1List.add(patient);
+			} else if (patient.getStatus() == "Casa") {
+				
+			} else if (patient.getStatus() == "Fallecido") {
+				
+			} else if (patient.getStatus() == "Hospital") {
+				
+			} else if (patient.getStatus() == "N/A") {
+				
+			} else if (patient.getStatus() == "Hospital UCI") {
+				
 			}
 		}
-		return report1List;
+		return list1;
 	}
 	
 	public ArrayList<Patient> report2() {
