@@ -6,14 +6,19 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
+import models.PatientFull;
+import models.PatientManager;
 import persistence.HandlerLanguage;
+import persistence.JsonFileManager;
 import views.ConstantsUI;
 import views.MainWindow;
+import views.Runner;
 
 
 public class Controller implements ActionListener {
 	
 	private MainWindow mainWindow;
+	private PatientManager manager;
 
 	private static final String ENGLISH_PATH = "resources/languages/languageUS.properties";
 	private static final String SPANISH_PATH = "resources/languages/languageES.properties";
@@ -24,7 +29,9 @@ public class Controller implements ActionListener {
 	public Controller() {
 		loadConfiguration();
         mainWindow = new MainWindow(this);
+		manager = new PatientManager();
         mainWindow.setVisible( true );
+		webData();
 	}
 
 	@Override
@@ -37,11 +44,23 @@ public class Controller implements ActionListener {
 		case C_US_LANGUAGE:
 			manageChangeLanguageUS();
 			break;
-		case C_EXIT_APP:
+		case EXIT_APP:
 			this.manageExitApp();
+			case REFRESH:
+				this.refresh();
 		default:
 			break;
 		}		
+	}
+
+	private void webData(){
+		JsonFileManager reader = new JsonFileManager();
+		PatientFull[] list = reader.readJson("https://www.datos.gov.co/resource/gt2j-8ykr.json?pertenencia_etnica=Otro");
+		manager.addList(list);
+	}
+
+	private void refresh(){
+		mainWindow.refreshTable(manager.getAccountValues());
 	}
 
 	private void manageExitApp() {
@@ -113,7 +132,7 @@ public class Controller implements ActionListener {
 		loadLanguage();
 	}
 
-    public static void main(String[] args) {
-        new Controller();
-    }
+	public static void main(String[] args) {
+		new Controller();
+	}
 }

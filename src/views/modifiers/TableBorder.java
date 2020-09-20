@@ -16,7 +16,7 @@ public class TableBorder implements Border {
     }
 
     public boolean isBorderOpaque() {
-        return true;
+        return false;
     }
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {

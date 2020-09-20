@@ -20,10 +20,13 @@ public class TableElementsPanel extends JPanel{
 
     private JTable table;
     private JScrollPane jsTable;
-    private ArrayList<Font> fontList;
+    private Font[] fontList;
+    private TitlePanel titlePanel;
 
-    public TableElementsPanel(){
+    public TableElementsPanel(Font[] fontList){
         this.setVisible(true);
+        this.fontList = fontList;
+        this.setBackground(Color.BLACK);
         initComponents();
     }
 
@@ -31,6 +34,9 @@ public class TableElementsPanel extends JPanel{
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         dtmElements = new DefaultTableModel();
         dtmElements.setColumnIdentifiers( ConstantsUI.HEADERS_TABLE );
+
+        titlePanel = new TitlePanel(fontList);
+        this.add(titlePanel);
 
         table = new JTable();
         table.setModel(dtmElements);
@@ -48,9 +54,9 @@ public class TableElementsPanel extends JPanel{
         jsTable = new JScrollPane(table);
         jsTable.setForeground(Color.white);
         jsTable.setBorder(null);
-        jsTable.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.add(jsTable, BorderLayout.PAGE_END);
-        this.setBorder(new TableBorder(8));
+        this.setBorder(null);
+
 
     }
     public void refreshTable(Object[][] list){

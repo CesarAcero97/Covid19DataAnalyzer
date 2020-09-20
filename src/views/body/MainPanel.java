@@ -15,11 +15,11 @@ public class MainPanel extends JPanel {
     public MainPanel(ActionListener listener, Font[] fontList) {
         this.setLayout(new BorderLayout());
         this.setVisible(true);
-        componentInit(listener);
+        componentInit(listener, fontList);
     }
 
-    private void componentInit(ActionListener listener) {
-        tablePanel = new TableElementsPanel();
+    private void componentInit(ActionListener listener, Font[] fontList) {
+        tablePanel = new TableElementsPanel(fontList);
         HeaderPanel headerPanel = new HeaderPanel(listener);
         this.add(headerPanel, BorderLayout.NORTH);
         this.add(tablePanel, BorderLayout.CENTER);

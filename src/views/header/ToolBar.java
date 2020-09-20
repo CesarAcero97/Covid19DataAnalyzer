@@ -1,5 +1,6 @@
 package views.header;
 
+import controllers.Commands;
 import views.ConstantsUI;
 import views.modifiers.ButtonTool;
 
@@ -13,7 +14,7 @@ public class ToolBar extends JToolBar {
 
     public ToolBar(ActionListener listener){
         setLayout( new FlowLayout(FlowLayout.LEFT));
-        setBackground( ConstantsUI.MAIN_COLOR);
+        setBackground( ConstantsUI.BUTTON_BG_COLOR);
         setFloatable(false);
         componentsInit(listener);
     }
@@ -49,7 +50,7 @@ public class ToolBar extends JToolBar {
         refreshButton = new ButtonTool();
         Image refreshIcon = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_REFRESH_ICON)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
         refreshButton.setIcon(new ImageIcon(refreshIcon));
-        //refreshButton.setActionCommand( Commands.REFRESH.name() );
+        refreshButton.setActionCommand( Commands.REFRESH.name() );
         refreshButton.addActionListener( listener );
         refreshButton.setToolTipText( ConstantsUI.REFRESH );
         refreshButton.setBorderPainted(false);

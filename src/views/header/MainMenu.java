@@ -1,5 +1,6 @@
 package views.header;
 
+import controllers.Commands;
 import views.ConstantsUI;
 
 import javax.swing.*;
@@ -19,7 +20,7 @@ public class MainMenu extends JMenuBar {
         JMenu archive = new JMenu(ConstantsUI.ARCHIVE);
         JMenuItem exit = new JMenuItem(ConstantsUI.EXIT);
         exit.addActionListener(this.listener);
-        //exit.setActionCommand(Commands.EXIT_APP.toString());
+        exit.setActionCommand(Commands.EXIT_APP.toString());
         archive.add(exit);
         this.add(archive);
 
