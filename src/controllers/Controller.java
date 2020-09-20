@@ -59,7 +59,7 @@ public class Controller implements ActionListener {
 	private void removePatient(){
 		int id = mainWindow.getSelectedId();
 		System.out.println(id);
-		//manager.delete(id);
+		manager.delete(id);
 		refresh();
 	}
 
