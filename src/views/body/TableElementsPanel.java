@@ -4,8 +4,10 @@ import views.ConstantsUI;
 import views.modifiers.TableBorder;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -26,7 +28,6 @@ public class TableElementsPanel extends JPanel{
     public TableElementsPanel(Font[] fontList){
         this.setVisible(true);
         this.fontList = fontList;
-        this.setBackground(Color.BLACK);
         initComponents();
     }
 
@@ -41,13 +42,17 @@ public class TableElementsPanel extends JPanel{
         table = new JTable();
         table.setModel(dtmElements);
         table.getTableHeader().setReorderingAllowed(false);
-        table.getTableHeader().setBackground( ConstantsUI.MAIN_COLOR );
+        table.getTableHeader().setBackground(ConstantsUI.TABLE_BG_COLOR);
         table.getTableHeader().setPreferredSize( new Dimension(0, 60));
         table.getTableHeader().setForeground(Color.white);
-        table.setBackground(Color.white);
+        table.getTableHeader().setFont(fontList[3]);
+        table.setBackground(ConstantsUI.BUTTON_BG_COLOR);
         table.setFillsViewportHeight(true);
-        table.setRowHeight( 35 );
-        table.setBorder(null);
+        table.setRowHeight(30);
+        table.setFont(fontList[3]);
+        table.setSelectionBackground(ConstantsUI.SELECTED_BG_COLOR);
+        MatteBorder border = new MatteBorder(1, 1, 0, 0, ConstantsUI.TABLE_BG_COLOR);
+        table.setBorder(border);
 
         centerTextInCell();
 
@@ -80,5 +85,6 @@ public class TableElementsPanel extends JPanel{
             table.getColumnModel().getColumn(i).setCellRenderer(centerModel);
         }
     }
+
 
 }

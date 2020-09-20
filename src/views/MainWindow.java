@@ -70,7 +70,7 @@ public class MainWindow extends JFrame {
         try{
             InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_ROBOTO_BLACK));
             Font robotoBlackBase = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
-            robotoBigBlack = robotoBlackBase.deriveFont(Font.PLAIN, 90);
+            robotoBigBlack = robotoBlackBase.deriveFont(Font.PLAIN, 80);
             robotoMediumBlack = robotoBlackBase.deriveFont(Font.PLAIN, 70);
         }catch(IOException | FontFormatException e){
             System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
@@ -79,9 +79,9 @@ public class MainWindow extends JFrame {
         try{
             InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_ROBOTO_REGULAR));
             Font robotoRegularBase = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
-            robotoBigRegular = robotoRegularBase.deriveFont(Font.PLAIN, 12);
+            robotoBigRegular = robotoRegularBase.deriveFont(Font.PLAIN, 16);
             robotoMediumRegular = robotoRegularBase.deriveFont(Font.PLAIN, 14);
-            robotoSmallRegular = robotoRegularBase.deriveFont(Font.PLAIN, 16);
+            robotoSmallRegular = robotoRegularBase.deriveFont(Font.PLAIN, 12);
         }catch(IOException | FontFormatException e){
             System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
         }

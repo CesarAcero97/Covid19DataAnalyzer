@@ -12,7 +12,6 @@ import persistence.HandlerLanguage;
 import persistence.JsonFileManager;
 import views.ConstantsUI;
 import views.MainWindow;
-import views.Runner;
 
 
 public class Controller implements ActionListener {

@@ -48,11 +48,13 @@ public class ConstantsUI {
     //Colors
     public static Color MAIN_COLOR = Color.decode("#2d2d2d");
     public static Color TEXT_COLOR = Color.decode("#F8F8FF");
-    public static Color TABLE_BG_COLOR = Color.decode("#696969");
+    public static Color TABLE_BG_COLOR = Color.decode("#000000");
     public static Color TABLE_FG_COLOR = Color.decode("#ffffff");
     public static Color BUTTON_BG_COLOR = Color.decode("#ffffff");
     public static Color BUTTON_FG_COLOR = Color.decode("#5B6A76");
     public static Color RED_COLOR = Color.decode("#ff0000");
+    public static Color BLUE_BG_COLOR = Color.decode("#2196F3");
+    public static Color SELECTED_BG_COLOR = Color.decode("#b3b3b3");
 
 
     //Icons PATH
@@ -60,5 +62,6 @@ public class ConstantsUI {
     public static String PATH_EXPORT_ICON = "/resources/imgs/export.png";
     public static String PATH_IMPORT_ICON = "/resources/imgs/import.png";
     public static String PATH_REFRESH_ICON = "/resources/imgs/refresh.png";
+    public static String PATH_COLOMBIA_MAP = "/resources/imgs/colombiaMap.jpg";
 
 }
