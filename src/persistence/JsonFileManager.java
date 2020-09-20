@@ -2,7 +2,6 @@ package persistence;
 import com.google.gson.Gson;
 import models.Patient;
 import models.PatientFull;
-import org.json.simple.*;
 
 import java.io.*;
 import java.net.URL;

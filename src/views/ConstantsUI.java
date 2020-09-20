@@ -7,21 +7,9 @@ public class ConstantsUI {
     public static final String WINDOW_TITLE = "COVID-19 ANALYZER";
     public static final String[] HEADERS_TABLE = {"ID", "Fecha de Admision", "Ciudad", "Departamento", "Atencion", "Edad",
             "Sexo", "Tipo", "Estado", "Pais de Origen", "FIS", "Fecha Diagnostico", "Fecha Recuperacion", "Recuperacion"};
-    private int ID;
-    private LocalDate admissionDate;
-    private String city;
-    private String department;
-    private String attention;
-    private byte age;
-    private String sex;
-    private String type;
-    private String status;
-    private String countryOfOrigin;
-    private LocalDate firstSymptomsDate;
-    private LocalDate diagnosticDate;
-    private LocalDate recoveryDate;
-    private String recoveryType;
-
+    public static final String[] SEX_OPTIONS = {"M", "F"};
+    public static final String[] TYPE_OPTIONS = {"Relacionado", "En Estudio", "Importado"};
+    public static final String[] ATTENTION_OPTIONS = {"Casa", "Hospital", "Recuperado", "Fallecido"};
     public static final String EXIT = "Salir";
     public static final String IMPORT = "Importar";
     public static final String EXPORT = "Exportar";
@@ -45,11 +33,31 @@ public class ConstantsUI {
     public static final String PATH_ROBOTO_LIGHT = PATH_USER + "/src/resources/fonts/Roboto-Light.ttf";
     public static final String PATH_AWESEOME_BRAND = PATH_USER + "/src/resources/fonts/fa-brands-400.ttf";
     public static final String EXCEPTION_MSG_FONT_ERROR = "No se puede cargar la fuente";
+    public static final String CREATE_PATIENT_TITLE = "Crear "+ "\n" +" Paciente";
     public static final String MESSAGE_EXIT_APP = "Salir de la aplicación";
 
+    //Patient Creation
+    public static final String CITY = "Ciudad";
+    public static final String DEPARTMENT = "Departamento";
+    public static final String ATTENTION = "Atención";
+    public static final String AGE = "Edad";
+    public static final String SEX = "Sexo";
+    public static final String TYPE = "Tipo";
+    public static final String STATUS = "Estado";
+    public static final String COUNTRY_OF_ORIGIN = "Pais de Origen";
+    public static final String ADMISSION_DATE = "Fecha de admision";
+    public static final String RECOVERY_TYPE = "Tipo de Recuperacion";
+    public static final String RECOVERY_DATE = "Fecha de Recuperacion";
+    public static final String FIRTS_SYMPTOMS_DATE = "Primeros Sintomas";
+    public static final String DIAGNOSTIC_DATE = "Fecha de Diagnostico";
+    public static final String CANCEL = "Cancelar";
+    public static final String CREATE = "Crear";
+
+
     //Colors
-    public static Color MAIN_COLOR = Color.decode("#2d2d2d");
-    public static Color TEXT_COLOR = Color.decode("#F8F8FF");
+    public static Color MAIN_COLOR = Color.decode("#2196F3");
+    public static Color TEXT_COLOR = Color.decode("#ffffff");
+    public static Color TITLE_COLOR = Color.decode("#ffffff");
     public static Color TABLE_BG_COLOR = Color.decode("#000000");
     public static Color TABLE_FG_COLOR = Color.decode("#ffffff");
     public static Color BUTTON_BG_COLOR = Color.decode("#ffffff");

@@ -22,7 +22,7 @@ public class TitlePanel extends JPanel {
         //titleLabel.setIcon(new ImageIcon(background));
         titleLabel.setText(ConstantsUI.WINDOW_TITLE);
         titleLabel.setFont(fontList[0]);
-        titleLabel.setForeground(ConstantsUI.TEXT_COLOR);
+        titleLabel.setForeground(ConstantsUI.TITLE_COLOR);
         titleLabel.setVerticalTextPosition(JLabel.CENTER);
         titleLabel.setHorizontalTextPosition(JLabel.CENTER);
         this.add(titleLabel);

@@ -1,5 +1,6 @@
 package views;
 
+import views.body.AddPatientPanel;
 import views.body.MainPanel;
 import views.reports.AccountType;
 import views.reports.BillingAverage;
@@ -19,6 +20,7 @@ public class MainWindow extends JFrame {
 	private MainPanel mainPanel;
 	private AccountType accountType;
 	private BillingAverage billingAverage;
+	private AddPatientPanel addPatientPanel;
 
 	private Font[] fonts;
 
@@ -45,6 +47,7 @@ public class MainWindow extends JFrame {
         mainPanel = new MainPanel(listener, fonts);
         accountType = new AccountType();
         billingAverage = new BillingAverage();
+        addPatientPanel = new AddPatientPanel(listener, fonts);
         this.add(mainPanel);
     }
 
@@ -68,6 +71,15 @@ public class MainWindow extends JFrame {
         return mainPanel.getSelectedId();
     }
 
+    public void setVisiblePatientPanel(){
+        addPatientPanel.setVisible(true);
+    }
+
+    public void makeInvisibleDialogs(){
+        if (addPatientPanel != null)
+            addPatientPanel.setVisible(false);
+    }
+
     //Font Init
 
     private void fontsInit(){
@@ -75,7 +87,7 @@ public class MainWindow extends JFrame {
             InputStream pathToFont = new BufferedInputStream(new FileInputStream(ConstantsUI.PATH_ROBOTO_BLACK));
             Font robotoBlackBase = Font.createFont(Font.TRUETYPE_FONT, pathToFont);
             robotoBigBlack = robotoBlackBase.deriveFont(Font.PLAIN, 80);
-            robotoMediumBlack = robotoBlackBase.deriveFont(Font.PLAIN, 70);
+            robotoMediumBlack = robotoBlackBase.deriveFont(Font.PLAIN, 30);
         }catch(IOException | FontFormatException e){
             System.out.println(ConstantsUI.EXCEPTION_MSG_FONT_ERROR);
         }

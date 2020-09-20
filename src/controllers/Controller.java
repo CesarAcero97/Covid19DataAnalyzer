@@ -37,23 +37,40 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		switch ( Commands.valueOf( e.getActionCommand() ) ) {
-		case C_ES_LANGUAGE:
-			manageChangeLanguageES();
-			break;
-		case C_US_LANGUAGE:
-			manageChangeLanguageUS();
-			break;
-		case EXIT_APP:
-			this.manageExitApp();
+			case ADD_PATIENT:
+				this.addPatient();
+				break;
+			case CANCEL:
+				this.cancelCreation();
+				break;
+			case CREATE_PATIENT:
+				this.createPatient();
+				break;
 			case REFRESH:
 				this.refresh();
 				break;
 			case REMOVE_PATIENT:
 				this.removePatient();
 				break;
+			case C_ES_LANGUAGE:
+				manageChangeLanguageES();
+			break;
+			case C_US_LANGUAGE:
+				manageChangeLanguageUS();
+			break;
+			case EXIT_APP:
+				this.manageExitApp();
 		default:
 			break;
 		}		
+	}
+
+	private void cancelCreation(){
+		mainWindow.makeInvisibleDialogs();
+	}
+
+	private void createPatient(){
+
 	}
 
 	private void removePatient(){
@@ -61,6 +78,10 @@ public class Controller implements ActionListener {
 		System.out.println(id);
 		manager.delete(id);
 		refresh();
+	}
+
+	private void addPatient(){
+		mainWindow.setVisiblePatientPanel();
 	}
 
 	private void webData(){
