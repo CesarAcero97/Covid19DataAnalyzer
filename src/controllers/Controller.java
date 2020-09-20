@@ -14,6 +14,7 @@ import persistence.HandlerLanguage;
 import persistence.JsonFileManager;
 import views.ConstantsUI;
 import views.MainWindow;
+import views.reports.ChartPanel;
 import views.reports.PieReport;
 
 
@@ -117,7 +118,8 @@ public class Controller implements ActionListener {
 			case 3:
 				title = ConstantsUI.REPORT_THREE_TITLE;
 				data = manager.report3();
-				break;
+				ChartPanel chart = new ChartPanel(data, title);
+				return;
 			case 4:
 				title = ConstantsUI.REPORT_FOUR_TITLE;
 				data = manager.report4();
