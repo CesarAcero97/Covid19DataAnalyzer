@@ -145,10 +145,10 @@ public class PatientManager {
 		HashMap<String, Integer> list4 = new HashMap<String, Integer>();
 		int range1 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getDepartment().equalsIgnoreCase("BoyacÃ¡"))
+			if (patient.getDepartment().equalsIgnoreCase("Boyacá"))
 				range1++;
 		}
-		list4.put("Pacientes en BoyacÃ¡", range1);
+		list4.put("Pacientes en Boyacá", range1);
 		list4.put("Resto del pais", patientList.size());
 		return list4;
 	}
@@ -184,7 +184,7 @@ public class PatientManager {
 		for (Patient patient : patientList) {
 			if (patient.getStatus().equalsIgnoreCase("Leve")) {
 				range1++;
-			} else if (patient.getStatus().equalsIgnoreCase("Asintomï¿½tico")) {
+			} else if (patient.getStatus().equalsIgnoreCase("Asintomático")) {
 				range2++;
 			} else if (patient.getStatus().equalsIgnoreCase("Fallecido")) {
 				range3++;
@@ -197,7 +197,7 @@ public class PatientManager {
 			}
 		}
 		list6.put("Leve", range1);
-		list6.put("AsintomÃ¡tico", range2);
+		list6.put("Asintomático", range2);
 		list6.put("Fallecido", range3);
 		list6.put("Moderado", range4);
 		list6.put("Grave", range5);
@@ -247,9 +247,8 @@ public class PatientManager {
 		int range20 = 0;
 		int range21 = 0;
 		int range22 = 0;
-		int range23 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getDepartment().equalsIgnoreCase("BogotÃ¡ D.C.")) {
+			if (patient.getDepartment().equalsIgnoreCase("Bogotá D.C.")) {
 				range1++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Antioquia")) {
 				range2++;
@@ -259,67 +258,64 @@ public class PatientManager {
 				range4++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Cundinamarca")) {
 				range5++;
-			} else if (patient.getDepartment().equalsIgnoreCase("AtlÃ¡ntico")) {
+			} else if (patient.getDepartment().equalsIgnoreCase("Atlántico")) {
 				range6++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Santander")) {
 				range7++;
-			} else if (patient.getDepartment().equalsIgnoreCase("CÃ³rdoba")) {
+			} else if (patient.getDepartment().equalsIgnoreCase("Córdoba")) {
 				range8++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Cartagena D.T. y C.")) {
 				range9++;
-			} else if (patient.getDepartment().equalsIgnoreCase("NariÃ±o")) {
+			} else if (patient.getDepartment().equalsIgnoreCase("Nariño")) {
 				range10++;
-			} else if (patient.getDepartment().equalsIgnoreCase("CÃ³rdoba")) {
-				range11++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Cesar")) {
-				range12++;
+				range11++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Norte de Santander")) {
-				range13++;
+				range12++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Meta")) {
-				range14++;
+				range13++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Sucre")) {
-				range15++;
+				range14++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Tolima")) {
-				range16++;
+				range15++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Santa Marta D.T. y C.")) {
-				range17++;
+				range16++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Risaralda")) {
-				range18++;
+				range17++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Huila")) {
-				range19++;
+				range18++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Cauca")) {
-				range20++;
+				range19++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Caquetï¿½")) {
-				range21++;
+				range20++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Amazonas")) {
-				range22++;
+				range21++;
 			} else if (patient.getDepartment().equalsIgnoreCase("Vichada")) {
-				range23++;
+				range22++;
 			}
 		}
-		list8.put("BogotÃ¡ D.C.", range1);
+		list8.put("Bogotá D.C.", range1);
 		list8.put("Antioquia", range2);
 		list8.put("Valle del Cauca", range3);
 		list8.put("Barranquilla D.E.", range4);
 		list8.put("Cundinamarca", range5);
-		list8.put("AtlÃ¡ntico", range6);
+		list8.put("Atlántico", range6);
 		list8.put("Santander", range7);
-		list8.put("CÃ³rdoba", range8);
+		list8.put("Córdoba", range8);
 		list8.put("Cartagena D.T. y C.", range9);
-		list8.put("NariÃ±o", range10);
-		list8.put("CÃ³rdoba", range11);
-		list8.put("Cesar", range12);
-		list8.put("Norte de Santander", range13);
-		list8.put("Meta", range14);
-		list8.put("Sucre", range15);
-		list8.put("Tolima", range16);
-		list8.put("Santa Marta D.T. y C.", range17);
-		list8.put("Risaralda", range18);
-		list8.put("Huila", range19);
-		list8.put("Cauca", range20);
-		list8.put("CaquetÃ¡", range21);
-		list8.put("Amazonas", range22);
-		list8.put("Vichada", range23);
+		list8.put("Nariño", range10);
+		list8.put("Cesar", range11);
+		list8.put("Norte de Santander", range12);
+		list8.put("Meta", range13);
+		list8.put("Sucre", range14);
+		list8.put("Tolima", range15);
+		list8.put("Santa Marta D.T. y C.", range16);
+		list8.put("Risaralda", range17);
+		list8.put("Huila", range18);
+		list8.put("Cauca", range19);
+		list8.put("Caquetá", range20);
+		list8.put("Amazonas", range21);
+		list8.put("Vichada", range22);
 		return list8;
 	}
 	
@@ -349,7 +345,7 @@ public class PatientManager {
 			}
 		}
 		list10.put("Resultados en Tunja", range1);
-		list10.put("Resultados en BoyacÃ¡", report4().get("Resto del pais"));
+		list10.put("Resultados en Boyacá", report4().get("Resto del pais"));
 		return list10;
 	}
 	
