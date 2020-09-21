@@ -130,9 +130,9 @@ public class PatientManager {
 		int M = 0;
 		int F = 0;
 		for (Patient patient : patientList) {
-			if (patient.getSex() == "M") {
+			if (patient.getSex().equalsIgnoreCase("M")) {
 				M++;
-			} else if (patient.getSex() == "F") {
+			} else if (patient.getSex().equalsIgnoreCase("F")) {
 				F++;
 			}
 		}
@@ -145,7 +145,7 @@ public class PatientManager {
 		HashMap<String, Integer> list4 = new HashMap<String, Integer>();
 		int range1 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getDepartment() == "Boyacá") {
+			if (patient.getDepartment().equalsIgnoreCase("Boyacá")) {
 				range1++;
 			}
 		}
@@ -159,11 +159,11 @@ public class PatientManager {
 		int range2 = 0;
 		int range3 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getType() == "En estudio" || patient.getType() == "En Estudio") {
+			if (patient.getType().equalsIgnoreCase("En estudio") || patient.getType().equalsIgnoreCase("En Estudio")) {
 				range1++;
-			} else if (patient.getType() == "Relacionado" || patient.getType() == "relacionado" || patient.getType() == "RELACIONADO") {
+			} else if (patient.getType().equalsIgnoreCase("Relacionado") || patient.getType().equalsIgnoreCase("relacionado") || patient.getType().equalsIgnoreCase("RELACIONADO")) {
 				range2++;
-			} else if (patient.getType() == "Importado") {
+			} else if (patient.getType().equalsIgnoreCase("Importado")) {
 				range3++;
 			}
 		}
@@ -186,13 +186,13 @@ public class PatientManager {
 				range1++;
 			} else if (patient.getStatus().equalsIgnoreCase("Asintomático")) {
 				range2++;
-			} else if (patient.getStatus() == "Fallecido") {
+			} else if (patient.getStatus().equalsIgnoreCase("Fallecido")) {
 				range3++;
-			} else if (patient.getStatus() == "Moderado") {
+			} else if (patient.getStatus().equalsIgnoreCase("Moderado")) {
 				range4++;
-			} else if (patient.getStatus() == "Grave") {
+			} else if (patient.getStatus().equalsIgnoreCase("Grave")) {
 				range5++;
-			} else if (patient.getStatus() == "N/A") {
+			} else if (patient.getStatus().equalsIgnoreCase("N/A")) {
 				range6++;
 			}
 		}
@@ -247,51 +247,51 @@ public class PatientManager {
 		int range22 = 0;
 		int range23 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getDepartment() == "Bogotá D.C.") {
+			if (patient.getDepartment().equalsIgnoreCase("Bogotá D.C.")) {
 				range1++;
-			} else if (patient.getDepartment() == "Antioquia") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Antioquia")) {
 				range2++;
-			} else if (patient.getDepartment() == "Valle del Cauca") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Valle del Cauca")) {
 				range3++;
-			} else if (patient.getDepartment() == "Barranquilla D.E.") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Barranquilla D.E.")) {
 				range4++;
-			} else if (patient.getDepartment() == "Cundinamarca") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Cundinamarca")) {
 				range5++;
-			} else if (patient.getDepartment() == "Atlántico") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Atlántico")) {
 				range6++;
-			} else if (patient.getDepartment() == "Santander") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Santander")) {
 				range7++;
-			} else if (patient.getDepartment() == "Córdoba") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Córdoba")) {
 				range8++;
-			} else if (patient.getDepartment() == "Cartagena D.T. y C.") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Cartagena D.T. y C.")) {
 				range9++;
-			} else if (patient.getDepartment() == "Nariño") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Nariño")) {
 				range10++;
-			} else if (patient.getDepartment() == "Córdoba") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Córdoba")) {
 				range11++;
-			} else if (patient.getDepartment() == "Cesar") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Cesar")) {
 				range12++;
-			} else if (patient.getDepartment() == "Norte de Santander") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Norte de Santander")) {
 				range13++;
-			} else if (patient.getDepartment() == "Meta") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Meta")) {
 				range14++;
-			} else if (patient.getDepartment() == "Sucre") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Sucre")) {
 				range15++;
-			} else if (patient.getDepartment() == "Tolima") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Tolima")) {
 				range16++;
-			} else if (patient.getDepartment() == "Santa Marta D.T. y C.") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Santa Marta D.T. y C.")) {
 				range17++;
-			} else if (patient.getDepartment() == "Risaralda") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Risaralda")) {
 				range18++;
-			} else if (patient.getDepartment() == "Huila") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Huila")) {
 				range19++;
-			} else if (patient.getDepartment() == "Cauca") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Cauca")) {
 				range20++;
-			} else if (patient.getDepartment() == "Caquetá") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Caquetá")) {
 				range21++;
-			} else if (patient.getDepartment() == "Amazonas") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Amazonas")) {
 				range22++;
-			} else if (patient.getDepartment() == "Vichada") {
+			} else if (patient.getDepartment().equalsIgnoreCase("Vichada")) {
 				range23++;
 			}
 		}
