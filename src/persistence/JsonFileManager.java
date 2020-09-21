@@ -6,6 +6,7 @@ import models.PatientFull;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 
 public class JsonFileManager {
 
@@ -40,7 +41,17 @@ public class JsonFileManager {
         }
         return "";
     }
-
+    
+    public static void writeJsonFile(ArrayList<Patient> patientList) {
+    	try {
+    	    Writer writer = new FileWriter("patients.cvd");
+    	    new Gson().toJson(patientList, writer);
+    	    writer.close();
+    	} catch (Exception ex) {
+    	    ex.printStackTrace();
+    	}
+    }
+    
     public PatientFull[] readJson(String url){
         String text = readFileFromUrl(url);
         return new Gson().fromJson(text, PatientFull[].class);
