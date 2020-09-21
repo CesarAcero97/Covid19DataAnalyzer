@@ -94,6 +94,62 @@ public class Patient {
 		return recoveryType;
 	}
 	
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+	public void setAdmissionDate(LocalDate admissionDate) {
+		this.admissionDate = admissionDate;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public void setAttention(String attention) {
+		this.attention = attention;
+	}
+
+	public void setAge(byte age) {
+		this.age = age;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setCountryOfOrigin(String countryOfOrigin) {
+		this.countryOfOrigin = countryOfOrigin;
+	}
+
+	public void setFirstSymptomsDate(LocalDate firstSymptomsDate) {
+		this.firstSymptomsDate = firstSymptomsDate;
+	}
+
+	public void setDiagnosticDate(LocalDate diagnosticDate) {
+		this.diagnosticDate = diagnosticDate;
+	}
+
+	public void setRecoveryDate(LocalDate recoveryDate) {
+		this.recoveryDate = recoveryDate;
+	}
+
+	public void setRecoveryType(String recoveryType) {
+		this.recoveryType = recoveryType;
+	}
+
 	public Object[] toObject() {
 		//Caso, fecha, Ciudad, departamento, atencion, edad, sexo, tipo, estado, pa_s_de_procedencia, fis, fecha_diagnostico, fecha_recuperado, tipo_recuperaci_n
 		Object[] patientData = {ID, admissionDate, city, department, attention, age, sex, type, status, countryOfOrigin, firstSymptomsDate, diagnosticDate, recoveryDate, recoveryType};

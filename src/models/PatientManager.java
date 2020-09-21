@@ -27,6 +27,14 @@ public class PatientManager {
 		patientList.add(patient);
 	}
 	
+	public void addPatient(Patient patient) {
+		int maxID = patientList.size() + 1;
+		if (patient.getID() < patientList.get(patientList.size() + 1).getID()) {
+			patient.setID(maxID);
+			patientList.add(patient);
+		}
+	}
+	
 	public void delete(int ID) {
 		int index = 0;
 		for (Patient patient : patientList) {
