@@ -352,4 +352,5 @@ public class PatientManager {
 	
 	// Fin de m�todos de reportes
 
+	
 }
