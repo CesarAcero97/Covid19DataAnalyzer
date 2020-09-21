@@ -85,19 +85,25 @@ public class PatientManager {
 		int na = 0;
 		int uci = 0;
 		for (Patient patient : patientList) {
-			if (patient.getAttention() == "Recuperado") {
-				list1.put("Recuperados", recovered++);
-			} else if (patient.getAttention() == "Casa") {
-				list1.put("En casa", house++);
-			} else if (patient.getAttention() == "Fallecido") {
-				list1.put("Fallecidos", deceased++);
-			} else if (patient.getAttention() == "Hospital") {
-				list1.put("En hospital", hospital++);
-			} else if (patient.getAttention() == "N/A") {
-				list1.put("N/A", na++);
-			} else if (patient.getAttention() == "Hospital UCI") {
-				list1.put("En UCIs", uci++);
+			if (patient.getAttention().equalsIgnoreCase("Recuperado")) {
+				recovered++;
+			} else if (patient.getAttention().equalsIgnoreCase("Casa")) {
+				house++;
+			} else if (patient.getAttention().equalsIgnoreCase("Fallecido")) {
+				deceased++;
+			} else if (patient.getAttention().equalsIgnoreCase("Hospital")) {
+				hospital++;
+			} else if (patient.getAttention().equalsIgnoreCase("N/A")) {
+				na++;
+			} else if (patient.getAttention().equalsIgnoreCase("Hospital UCI")) {
+				uci++;
 			}
+			list1.put("Recuperados", recovered);
+			list1.put("En casa", house);
+			list1.put("Fallecidos", deceased);
+			list1.put("En hospital", hospital);
+			list1.put("N/A", na);
+			list1.put("En UCIs", uci);
 		}
 		return list1;
 	}
@@ -125,11 +131,13 @@ public class PatientManager {
 		int F = 0;
 		for (Patient patient : patientList) {
 			if (patient.getSex() == "M") {
-				list3.put("Hombres", M++);
+				M++;
 			} else if (patient.getSex() == "F") {
-				list3.put("Mujeres", F++);
+				F++;
 			}
 		}
+		list3.put("Hombres", M);
+		list3.put("Mujeres", F);
 		return list3;
 	}
 	
@@ -138,9 +146,10 @@ public class PatientManager {
 		int range1 = 0;
 		for (Patient patient : patientList) {
 			if (patient.getDepartment() == "Boyacá") {
-				list4.put("Menores de 30", range1++);
+				range1++;
 			}
 		}
+		list4.put("Pacientes en Boyacá", range1);
 		return list4;
 	}
 	
@@ -151,13 +160,16 @@ public class PatientManager {
 		int range3 = 0;
 		for (Patient patient : patientList) {
 			if (patient.getType() == "En estudio" || patient.getType() == "En Estudio") {
-				list5.put("En estudio", range1++);
+				range1++;
 			} else if (patient.getType() == "Relacionado" || patient.getType() == "relacionado" || patient.getType() == "RELACIONADO") {
-				list5.put("Relacionado", range2++);
+				range2++;
 			} else if (patient.getType() == "Importado") {
-				list5.put("Importado", range3++);
+				range3++;
 			}
 		}
+		list5.put("En estudio", range1);
+		list5.put("Relacionado", range2);
+		list5.put("Importado", range3);
 		return list5;
 	}
 	
@@ -170,20 +182,26 @@ public class PatientManager {
 		int range5 = 0;
 		int range6 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getStatus() == "Leve") {
-				list6.put("Leve", range1++);
-			} else if (patient.getStatus() == "Asintomático") {
-				list6.put("Asintomático", range2++);
+			if (patient.getStatus().equalsIgnoreCase("Leve")) {
+				range1++;
+			} else if (patient.getStatus().equalsIgnoreCase("Asintomático")) {
+				range2++;
 			} else if (patient.getStatus() == "Fallecido") {
-				list6.put("Fallecido", range3++);
+				range3++;
 			} else if (patient.getStatus() == "Moderado") {
-				list6.put("Moderado", range4++);
+				range4++;
 			} else if (patient.getStatus() == "Grave") {
-				list6.put("Grave", range5++);
+				range5++;
 			} else if (patient.getStatus() == "N/A") {
-				list6.put("N/A", range6++);
+				range6++;
 			}
 		}
+		list6.put("Leve", range1);
+		list6.put("Asintomático", range2);
+		list6.put("Fallecido", range3);
+		list6.put("Moderado", range4);
+		list6.put("Grave", range5);
+		list6.put("N/A", range6);
 		return list6;
 	}
 	
@@ -192,11 +210,13 @@ public class PatientManager {
 		int range1 = 0;
 		int range2 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getRecoveryType() == "Tiempo") {
-				list7.put("Recuperados por tiempo", range1++);
+			if (patient.getRecoveryType().equalsIgnoreCase("Tiempo")) {
+				range1++;
 			} else if (patient.getRecoveryType() == "PCR") {
-				list7.put("Recuperados en segunda muestra", range2++);
+				range2++;
 			}
+			list7.put("Recuperados por tiempo", range1);
+			list7.put("Recuperados en segunda muestra", range2);
 		}
 		return list7;
 	}
@@ -225,55 +245,79 @@ public class PatientManager {
 		int range20 = 0;
 		int range21 = 0;
 		int range22 = 0;
+		int range23 = 0;
 		for (Patient patient : patientList) {
 			if (patient.getDepartment() == "Bogotá D.C.") {
-				list8.put("Bogotá D.C.", range1++);
+				range1++;
 			} else if (patient.getDepartment() == "Antioquia") {
-				list8.put("Antioquia", range2++);
+				range2++;
 			} else if (patient.getDepartment() == "Valle del Cauca") {
-				list8.put("Valle del Cauca", range3++);
+				range3++;
 			} else if (patient.getDepartment() == "Barranquilla D.E.") {
-				list8.put("Barranquilla D.E.", range4++);
+				range4++;
 			} else if (patient.getDepartment() == "Cundinamarca") {
-				list8.put("Cundinamarca", range5++);
+				range5++;
 			} else if (patient.getDepartment() == "Atlántico") {
-				list8.put("Atlántico", range6++);
+				range6++;
 			} else if (patient.getDepartment() == "Santander") {
-				list8.put("Santander", range7++);
+				range7++;
 			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range8++);
+				range8++;
 			} else if (patient.getDepartment() == "Cartagena D.T. y C.") {
-				list8.put("Cartagena D.T. y C.", range9++);
+				range9++;
 			} else if (patient.getDepartment() == "Nariño") {
-				list8.put("Nariño", range10++);
+				range10++;
 			} else if (patient.getDepartment() == "Córdoba") {
-				list8.put("Córdoba", range11++);
+				range11++;
 			} else if (patient.getDepartment() == "Cesar") {
-				list8.put("Cesar", range12++);
+				range12++;
 			} else if (patient.getDepartment() == "Norte de Santander") {
-				list8.put("Norte de Santander", range13++);
+				range13++;
 			} else if (patient.getDepartment() == "Meta") {
-				list8.put("Meta", range14++);
+				range14++;
 			} else if (patient.getDepartment() == "Sucre") {
-				list8.put("Sucre", range15++);
+				range15++;
 			} else if (patient.getDepartment() == "Tolima") {
-				list8.put("Tolima", range16++);
+				range16++;
 			} else if (patient.getDepartment() == "Santa Marta D.T. y C.") {
-				list8.put("Santa Marta D.T. y C.", range17++);
+				range17++;
 			} else if (patient.getDepartment() == "Risaralda") {
-				list8.put("Risaralda", range18++);
+				range18++;
 			} else if (patient.getDepartment() == "Huila") {
-				list8.put("Huila", range19++);
+				range19++;
 			} else if (patient.getDepartment() == "Cauca") {
-				list8.put("Cauca", range20++);
+				range20++;
 			} else if (patient.getDepartment() == "Caquetá") {
-				list8.put("Caquetá", range21++);
+				range21++;
 			} else if (patient.getDepartment() == "Amazonas") {
-				list8.put("Amazonas", range21++);
+				range22++;
 			} else if (patient.getDepartment() == "Vichada") {
-				list8.put("Vichada", range22++);
+				range23++;
 			}
 		}
+		list8.put("Bogotá D.C.", range1);
+		list8.put("Antioquia", range2);
+		list8.put("Valle del Cauca", range3);
+		list8.put("Barranquilla D.E.", range4);
+		list8.put("Cundinamarca", range5);
+		list8.put("Atlántico", range6);
+		list8.put("Santander", range7);
+		list8.put("Córdoba", range8);
+		list8.put("Cartagena D.T. y C.", range9);
+		list8.put("Nariño", range10);
+		list8.put("Córdoba", range11);
+		list8.put("Cesar", range12);
+		list8.put("Norte de Santander", range13);
+		list8.put("Meta", range14);
+		list8.put("Sucre", range15);
+		list8.put("Tolima", range16);
+		list8.put("Santa Marta D.T. y C.", range17);
+		list8.put("Risaralda", range18);
+		list8.put("Huila", range19);
+		list8.put("Cauca", range20);
+		list8.put("Caquetá", range21);
+		list8.put("Amazonas", range22);
+		list8.put("Vichada", range23);
 		return list8;
 	}
 	
@@ -298,10 +342,11 @@ public class PatientManager {
 		HashMap<String, Integer> list10 = new HashMap<String, Integer>();
 		int range1 = 0;
 		for (Patient patient : patientList) {
-			if (patient.getCity() == "Tunja") {
-				list10.put("Resultados en Tunja", range1++);
+			if (patient.getCity().equalsIgnoreCase("Tunja")) {
+				range1++;
 			}
 		}
+		list10.put("Resultados en Tunja", range1);
 		return list10;
 	}
 	
