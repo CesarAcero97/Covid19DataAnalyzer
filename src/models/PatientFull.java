@@ -1,7 +1,5 @@
 package models;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -43,7 +41,6 @@ public class PatientFull{
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		byte index = (byte)dateText.indexOf("T");
 		dateText = dateText.substring(0, index);
-		dateText.replaceAll(" ", "");
 		return LocalDate.parse(dateText, formatter);
 	}
 

@@ -1,7 +1,6 @@
 package models;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Patient {
 	private int ID;
@@ -151,9 +150,7 @@ public class Patient {
 	}
 
 	public Object[] toObject() {
-		//Caso, fecha, Ciudad, departamento, atencion, edad, sexo, tipo, estado, pa_s_de_procedencia, fis, fecha_diagnostico, fecha_recuperado, tipo_recuperaci_n
-		Object[] patientData = {ID, admissionDate, city, department, attention, age, sex, type, status, countryOfOrigin, firstSymptomsDate, diagnosticDate, recoveryDate, recoveryType};
-		return patientData;
+		return new Object[]{ID, admissionDate, city, department, attention, age, sex, type, status, countryOfOrigin, firstSymptomsDate, diagnosticDate, recoveryDate, recoveryType};
 	}
 	
 }

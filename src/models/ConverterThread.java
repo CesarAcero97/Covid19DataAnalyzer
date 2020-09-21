@@ -1,7 +1,5 @@
 package models;
 
-import java.util.ArrayList;
-
 public class ConverterThread extends Thread {
 
     private PatientManager manager;

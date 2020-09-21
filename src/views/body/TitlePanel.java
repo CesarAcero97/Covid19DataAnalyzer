@@ -18,8 +18,6 @@ public class TitlePanel extends JPanel {
 
     private void componentsInit(){
         JLabel titleLabel = new JLabel("");
-        Image background = (new ImageIcon(getClass().getResource(ConstantsUI.PATH_COLOMBIA_MAP)).getImage().getScaledInstance(1366, 200, Image.SCALE_SMOOTH));
-        //titleLabel.setIcon(new ImageIcon(background));
         titleLabel.setText(ConstantsUI.WINDOW_TITLE);
         titleLabel.setFont(fontList[0]);
         titleLabel.setForeground(ConstantsUI.TITLE_COLOR);

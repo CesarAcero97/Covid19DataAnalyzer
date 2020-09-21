@@ -13,14 +13,15 @@ import persistence.HandlerLanguage;
 import persistence.JsonFileManager;
 import views.ConstantsUI;
 import views.MainWindow;
+import views.modifiers.Splash;
 import views.reports.ChartPanel;
 import views.reports.PieReport;
 
 
 public class Controller implements ActionListener {
 	
-	private MainWindow mainWindow;
-	private PatientManager manager;
+	private final MainWindow mainWindow;
+	private final PatientManager manager;
 	private JsonFileManager jsonFileManager;
 
 	private static final String ENGLISH_PATH = "resources/languages/languageUS.properties";
@@ -224,6 +225,8 @@ public class Controller implements ActionListener {
 		}catch(IOException e){
 			JOptionPane.showMessageDialog(mainWindow, e.getMessage());
 		}
+		Splash splash = new Splash(5000);
+		splash.showSplash();
 	}
 
 	private void manageChangeLanguageUS(){

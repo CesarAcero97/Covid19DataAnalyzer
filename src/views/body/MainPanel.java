@@ -30,21 +30,6 @@ public class MainPanel extends JPanel {
         tablePanel.refreshTable(list);
     }
 
-    public String showFileDialog(){
-        String path;
-        JFileChooser chooser = new JFileChooser();
-        int seleccion = chooser.showOpenDialog(new JTextField("xD"));
-        if(seleccion == JFileChooser.APPROVE_OPTION){
-            File file = chooser.getSelectedFile();
-            path = file.getAbsolutePath();
-            chooser.setVisible(false);
-            return path;
-        }else {
-            chooser.setVisible(false);
-            return null;
-        }
-    }
-
     public int getSelectedId(){
         return tablePanel.getSelectedId();
     }

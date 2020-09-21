@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 
 public class AddPatientPanel extends JDialog {
 
-    private ActionListener listener;
+    private final ActionListener listener;
     private JSpinner employees;
     private JTextField city, department, age, status, countryOfOrigin, recoveryType;
     private JDateChooser admissionDate, firtsSymptomsDate, diagnosticDate, recoveryDate;

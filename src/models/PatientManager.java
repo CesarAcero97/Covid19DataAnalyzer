@@ -7,7 +7,7 @@ import java.util.List;
 
 public class PatientManager {
 
-	private ConverterThread converterThread;
+	private final ConverterThread converterThread;
 	protected ArrayList<Patient> patientList;
 
 	public PatientManager() {
@@ -43,8 +43,8 @@ public class PatientManager {
 	private int genID(){
 		int last = 0;
 		int actual = 0;
-		for (int i = 0; i < patientList.size(); i++) {
-			actual = patientList.get(i).getID();
+		for (Patient patient : patientList) {
+			actual = patient.getID();
 			if (last + 1 != actual) {
 				return last + 1;
 			} else {
@@ -79,7 +79,7 @@ public class PatientManager {
 	// Inicio de m�todos de reportes
 	
 	public HashMap<String, Integer> report1() {
-		HashMap<String, Integer> list1 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list1 = new HashMap<>();
 		int recovered = 0;
 		int house = 0;
 		int deceased = 0;
@@ -111,7 +111,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report2() {
-		HashMap<String, Integer> list2 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list2 = new HashMap<>();
 		int range1 = 0;
 		int range2 = 0;
 		int range3 = 0;
@@ -128,7 +128,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report3() {
-		HashMap<String, Integer> list3 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list3 = new HashMap<>();
 		int M = 0;
 		int F = 0;
 		for (Patient patient : patientList) {
@@ -144,7 +144,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report4() {
-		HashMap<String, Integer> list4 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list4 = new HashMap<>();
 		int range1 = 0;
 		for (Patient patient : patientList) {
 			if (patient.getDepartment().equalsIgnoreCase("Boyacá"))
@@ -156,7 +156,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report5() {
-		HashMap<String, Integer> list5 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list5 = new HashMap<>();
 		int range1 = 0;
 		int range2 = 0;
 		int range3 = 0;
@@ -176,7 +176,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report6() {
-		HashMap<String, Integer> list6 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list6 = new HashMap<>();
 		int range1 = 0;
 		int range2 = 0;
 		int range3 = 0;
@@ -208,7 +208,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report7() {
-		HashMap<String, Integer> list7 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list7 = new HashMap<>();
 		int range1 = 0;
 		int range2 = 0;
 		for (Patient patient : patientList) {
@@ -226,7 +226,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report8() {
-		HashMap<String, Integer> list8 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list8 = new HashMap<>();
 		int range1 = 0;
 		int range2 = 0;
 		int range3 = 0;
@@ -322,7 +322,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report9() {
-		HashMap<String, Integer> list9 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list9 = new HashMap<>();
 		int range1 = 0;
 		int range2 = 0;
 		int range3 = 0;
@@ -339,7 +339,7 @@ public class PatientManager {
 	}
 	
 	public HashMap<String, Integer> report10() {
-		HashMap<String, Integer> list10 = new HashMap<String, Integer>();
+		HashMap<String, Integer> list10 = new HashMap<>();
 		int range1 = 0;
 		for (Patient patient : patientList) {
 			if (patient.getCity().equalsIgnoreCase("Tunja")) {
